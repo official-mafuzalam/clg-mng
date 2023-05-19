@@ -153,7 +153,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/administration/student_search.php">
+                            <a class="text-decoration-none" href="{{ route('student.all') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-search"></i>
                                     <h5 class="card-title">Search Student</h5>

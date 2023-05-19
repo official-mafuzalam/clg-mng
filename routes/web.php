@@ -27,15 +27,13 @@ Route::group(['prefix' => 'administration'], function () {
 
     Route::post('/student_add', [StudentController::class, 'StudentAdd'])->name('student.add');
 
-    Route::get('/student_all', function () {
+    Route::get('/student_all',[StudentController::class, 'StudentALL'])->name('student.all');
 
-        $students = Student::all();
+    Route::get('/student_edit/{id}', [StudentController::class, 'StudentEdit'])->name('student.edit');
 
-        $data = compact('students');
-        return view('administration/student_all')->with($data);
-        
-    })->name('student.all');
+    Route::post('/student_update/{id}', [StudentController::class, 'StudentUpdate'])->name('student.update');
 
+    Route::get('/student_edit/{id}', [StudentController::class, 'StudentEdit'])->name('student.edit');
 
 
 });
