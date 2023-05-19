@@ -91,8 +91,8 @@
     </table>
 </div>
 
-<div class="row text-center">
-    <!-- Pagination Links -->
-    {{ $students->links() }}
+<div class="container text-center">
+    {!! $students->links() !!}
 </div>
+
 @include('layout.footer')
