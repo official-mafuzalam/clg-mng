@@ -9,49 +9,49 @@
                     id="menu">
                     <li class="nav-item">
                         <a class="tab nav-link" onclick="openTab(event, 'Tab1')" id="defaultOpen">
-                            <i class="fs-4 bi-grid"></i>
+                            <i class="fs-6 bi-grid"></i>
                             <span class="ms-1 d-none d-sm-inline">Dashboard</span>
                         </a>
                     </li>
                     <li>
                         <a class="tab nav-link" onclick="openTab(event, 'Tab2')">
-                            <i class="fs-4 bi-mortarboard"></i>
+                            <i class="fs-6 bi-mortarboard"></i>
                             <span class="ms-1 d-none d-sm-inline">Student</span>
                         </a>
                     </li>
                     <li>
                         <a class="tab nav-link" onclick="openTab(event, 'Tab3')">
-                            <i class="fs-4 bi-people"></i>
+                            <i class="fs-6 bi-people"></i>
                             <span class="ms-1 d-none d-sm-inline">Teacher</span>
                         </a>
                     </li>
                     <li>
                         <a class="tab nav-link" onclick="openTab(event, 'Tab4')">
-                            <i class="fs-4 bi-bell"></i>
+                            <i class="fs-6 bi-bell"></i>
                             <span class="ms-1 d-none d-sm-inline">Notice</span>
                         </a>
                     </li>
                     <li>
                         <a class="tab nav-link" onclick="openTab(event, 'Tab5')">
-                            <i class="fs-4 bi-bar-chart-line-fill"></i>
+                            <i class="fs-6 bi-bar-chart-line-fill"></i>
                             <span class="ms-1 d-none d-sm-inline">Results</span>
                         </a>
                     </li>
                     <li>
                         <a class="tab nav-link" onclick="openTab(event, 'Tab6')">
-                            <i class="fs-4 bi-currency-dollar"></i>
+                            <i class="fs-6 bi-currency-dollar"></i>
                             <span class="ms-1 d-none d-sm-inline">Deposit</span>
                         </a>
                     </li>
                     <li>
                         <a class="tab nav-link" onclick="openTab(event, 'Tab7')">
-                            <i class="fs-4 bi-people"></i>
+                            <i class="fs-6 bi-people"></i>
                             <span class="ms-1 d-none d-sm-inline">Book List</span>
                         </a>
                     </li>
                     <li>
                         <a class="tab nav-link" href="../download/">
-                            <i class="fs-4 bi-download"></i>
+                            <i class="fs-6 bi-download"></i>
                             <span class="ms-1 d-none d-sm-inline">Download</span>
                         </a>
                     </li>
@@ -151,7 +151,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
                             <a class="text-decoration-none" href="{{ route('student.all') }}">
                                 <div class="card-body text-black">
@@ -160,10 +160,10 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-3">
                         <div class="card text-center bg-danger bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/administration/update_semester.php">
+                            <a class="text-decoration-none" href="{{ route('semester.update') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-pencil-square"></i>
                                     <h5 class="card-title">Update Semester</h5>
@@ -171,7 +171,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
                             <a class="text-decoration-none" href="../other/administration/attendance_history.php">
                                 <div class="card-body text-black">
@@ -180,7 +180,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
             </div>
@@ -199,7 +199,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-warning bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/administration/teacher_add.php">
+                            <a class="text-decoration-none" href="{{ route('teacher.addPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-person-fill-add"></i>
                                     <h5 class="card-title">Add Teacher</h5>
@@ -209,7 +209,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-primary bg-opacity-50">
-                            <a class="text-decoration-none" href="../other/administration/teacher_list.php">
+                            <a class="text-decoration-none" href="{{ route('teacher.all') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-people"></i>
                                     <h5 class="card-title">All Teacher</h5>
@@ -217,7 +217,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
                             <a class="text-decoration-none" href="../other/administration/teacher_search.php">
                                 <div class="card-body text-black">
@@ -226,7 +226,7 @@
                                 </div>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
             </div>

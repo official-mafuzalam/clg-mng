@@ -40,6 +40,7 @@ class StudentController extends Controller
         $student->save();
 
         return redirect('administration/student_all');
+
     }
 
     public function StudentALL(Request $request)
@@ -51,11 +52,10 @@ class StudentController extends Controller
 
             $students = Student::where('technology', $search_technology)
                 ->where('current_semester', $search_semester)
-                ->paginate(50);
-
+                ->paginate(20);
 
         } else {
-            $students = Student::paginate(50);
+            $students = Student::paginate(20);
         }
 
         $data = compact('students');
@@ -109,6 +109,61 @@ class StudentController extends Controller
 
         }
     }
+
+
+    public function SemesterUpdateSearch(Request $request)
+    {
+
+        $search_technology = isset($request['technology']) ? $request['technology'] : "";
+        $search_semester = isset($request['semester']) ? $request['semester'] : "";
+
+        if ($search_technology != "") {
+
+            $students = Student::where('technology', $search_technology)
+                ->where('current_semester', $search_semester)
+                ->paginate(20);
+
+        } else {
+            $students = Student::paginate(20);
+        }
+
+        $data = [
+            'students' => $students,
+            'search_technology' => $search_technology,
+            'search_semester' => $search_semester,
+        ];
+        return view('administration/semester_update')->with($data);
+
+
+
+    }
+
+    public function SemesterUpdate(Request $request)
+    {
+
+        $search_technology = isset($request['technology']) ? $request['technology'] : "";
+        $search_semester = isset($request['semester']) ? $request['semester'] : "";
+        $new_semester = isset($request['new_semester']) ? $request['new_semester'] : "";
+
+        if ($search_technology != "") {
+
+            Student::where('technology', $search_technology)
+                ->where('current_semester', $search_semester)
+                ->update(['current_semester' => $new_semester]);
+
+            $students = Student::where('technology', $search_technology)
+                ->where('current_semester', $new_semester)
+                ->get();
+
+        } else {
+            $students = Student::all();
+        }
+        $data = compact('students');
+        return view('administration/semester_update')->with($data);
+
+
+    }
+
 
 
 }
