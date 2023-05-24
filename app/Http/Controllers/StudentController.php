@@ -51,11 +51,11 @@ class StudentController extends Controller
 
             $students = Student::where('technology', $search_technology)
                 ->where('current_semester', $search_semester)
-                ->paginate(5);
+                ->paginate(50);
 
 
         } else {
-            $students = Student::paginate(5);
+            $students = Student::paginate(50);
         }
 
         $data = compact('students');
