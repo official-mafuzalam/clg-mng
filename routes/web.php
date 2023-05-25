@@ -3,6 +3,7 @@
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\CourseController;
 use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -74,7 +75,7 @@ Route::group(['prefix' => 'administration'], function () {
     // Notice Section
 
     Route::get('/notice_add', [NoticeController::class, 'NoticeAddPage'])->name('notice.addPage');
-    
+
     Route::post('/notice_add', [NoticeController::class, 'NoticeAdd'])->name('notice.add');
 
     Route::get('/notice_all', [NoticeController::class, 'NoticeAll'])->name('notice.all');
@@ -82,6 +83,33 @@ Route::group(['prefix' => 'administration'], function () {
     Route::get('/notice_edit/{id}', [NoticeController::class, 'NoticeEdit'])->name('notice.edit');
 
     Route::post('/notice_update/{id}', [NoticeController::class, 'NoticeUpdate'])->name('notice.update');
+
+    Route::get('/notice_archive', [NoticeController::class, 'NoticeArchivePage'])->name('notice.archivePage');
+
+    Route::get('/notice_archive/{id}', [NoticeController::class, 'NoticeArchive'])->name('notice.archive');
+
+    Route::get('/notice_recycle/{id}', [NoticeController::class, 'NoticeRecycle'])->name('notice.recycle');
+
+    Route::get('/notice_delete/{id}', [NoticeController::class, 'NoticeDelete'])->name('notice.delete');
+
+
+    // Course Section
+    Route::get('course_add', [CourseController::class, 'CourseAddPage'])->name('course.addPage');
+
+    Route::post('course_add', [CourseController::class, 'CourseAdd'])->name('course.add');
+
+    Route::get('course_all', [CourseController::class, 'CourseAllPage'])->name('course.allPage');
+   
+    Route::get('/course_edit/{id}', [CourseController::class, 'CourseEdit'])->name('course.edit');
+
+    Route::post('/course_update/{id}', [CourseController::class, 'CourseUpdate'])->name('course.update');
+
+    Route::get('/course_delete/{id}', [CourseController::class, 'CourseDelete'])->name('teacher.delete');
+
+
+
+
+
 
 
 });

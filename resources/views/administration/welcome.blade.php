@@ -1,4 +1,4 @@
-@include('layout.header')
+@include('layout.header_main')
 
 
 <div class="container-fluid">
@@ -45,8 +45,8 @@
                     </li>
                     <li>
                         <a class="tab nav-link" onclick="openTab(event, 'Tab7')">
-                            <i class="fs-6 bi-people"></i>
-                            <span class="ms-1 d-none d-sm-inline">Book List</span>
+                            <i class="fs-6 bi-book"></i>
+                            <span class="ms-1 d-none d-sm-inline">Courses</span>
                         </a>
                     </li>
                     <li>
@@ -244,7 +244,7 @@
 
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
-                        <div class="card text-center bg-warning bg-opacity-75">
+                        <div class="card text-center bg-primary bg-opacity-50">
                             <a class="text-decoration-none" href="{{ route('notice.addPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-plus-circle-fill"></i>
@@ -259,6 +259,16 @@
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-table"></i>
                                     <h5 class="card-title">All Notice</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center bg-warning bg-opacity-75">
+                            <a class="text-decoration-none" href="{{ route('notice.archivePage') }}">
+                                <div class="card-body text-black">
+                                    <i class="fs-4 bi-table"></i>
+                                    <h5 class="card-title">Archived Notice</h5>
                                 </div>
                             </a>
                         </div>
@@ -365,11 +375,21 @@
 
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
+                        <div class="card text-center bg-primary bg-opacity-50">
+                            <a class="text-decoration-none" href="{{ route('course.addPage') }}">
+                                <div class="card-body text-black">
+                                    <i class="fs-4 bi-plus-circle-fill"></i>
+                                    <h5 class="card-title">Add Course</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/administration/book_list.php">
+                            <a class="text-decoration-none" href="{{ route('course.allPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-book"></i>
-                                    <h5 class="card-title">Book List</h5>
+                                    <h5 class="card-title">Courses List</h5>
                                 </div>
                             </a>
                         </div>
@@ -410,4 +430,4 @@
 
 
 
-@include('layout.footer')
+@include('layout.footer_main')

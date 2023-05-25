@@ -33,17 +33,18 @@ class NoticeController extends Controller
         $notice->description = $request['description'];
         $notice->save();
 
-        return view('administration/notice_all');
+        return redirect('administration/notice_all');
 
     }
 
     public function NoticeAll()
     {
 
-        $notices = Notice::all();
+        $notices = Notice::where('status', 1)->get();
 
         $data = compact('notices');
         return view('administration/notice_all')->with($data);
+
     }
 
     public function NoticeEdit($id)
@@ -84,7 +85,66 @@ class NoticeController extends Controller
         }
     }
 
+    public function NoticeArchivePage()
+    {
 
+        $notices = Notice::where('status', 0)->get();
+
+        $data = compact('notices');
+        return view('administration/notice_archive')->with($data);
+
+    }
+
+    public function NoticeArchive($id)
+    {
+
+        $notice = Notice::find($id);
+
+        if (is_null($notice)) {
+            return redirect('administration/notice_all');
+        } else {
+
+            $notice->status = 0;
+            $notice->save();
+
+            return redirect('administration/notice_all');
+        }
+
+    }
+
+    public function NoticeRecycle($id)
+    {
+
+        $notice = Notice::find($id);
+
+        if (is_null($notice)) {
+            return redirect('administration/notice_archive');
+        } else {
+
+            $notice->status = 1;
+            $notice->save();
+
+            return redirect('administration/notice_archive');
+        }
+
+    }
+
+    public function NoticeDelete($id)
+    {
+
+        $notice = Notice::find($id);
+
+        if (is_null($notice)) {
+            return redirect('administration/notice_archive');
+        } else {
+
+
+            $notice->delete();
+
+            return redirect('administration/notice_archive');
+        }
+
+    }
 
 
 

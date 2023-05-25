@@ -4,7 +4,9 @@
     <a class="text-decoration-none" href="{{ url('/') }}">
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
-    <p class="fs-4">All Student List</p>
+    <a class="text-decoration-none" href="{{ route('student.all') }}">
+        <p class="fs-4">All Student List</p>
+    </a>
 </div>
 
 <div class="container text-center">

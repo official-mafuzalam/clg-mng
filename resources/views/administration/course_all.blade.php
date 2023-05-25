@@ -4,13 +4,30 @@
     <a class="text-decoration-none" href="{{ url('/') }}">
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
-    <a class="text-decoration-none" href="{{ route('teacher.all') }}">
-        <p class="fs-4">All Teacher List</p>
+    <a class="text-decoration-none" href="{{ route('course.allPage') }}">
+        <p class="fs-4">All Course List</p>
     </a>
+
 </div>
 
 <div class="container text-center">
     <form class="row g-3 d-flex" role="search" action="">
+        <div class="col-md-4">
+            <div class="input-group">
+                <select name="semester" id="semester" class="cars form-control" required>
+                    <option value="" selected>Select Semester</option>
+                    <option value="1st">1st</option>
+                    <option value="2nd">2nd</option>
+                    <option value="3rd">3rd</option>
+                    <option value="4th">4th</option>
+                    <option value="5th">5th</option>
+                    <option value="6th">6th</option>
+                    <option value="7th">7th</option>
+                    <option value="8th">8th</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+        </div>
         <div class="col-md-4">
             <div class="input-group">
                 <select name="technology" id="technology" class="cars form-control" required>
@@ -38,31 +55,25 @@
         <thead class="table-dark">
             <tr>
                 <th scope="col">S_No</th>
-                <th scope="col">User ID</th>
-                <th scope="col">Name</th>
+                <th scope="col">Semester</th>
                 <th scope="col">Technologoy</th>
-                <th scope="col">Designation</th>
-                <th scope="col">Mobile No</th>
-                <th scope="col">Email</th>
+                <th scope="col">Book Name</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($teachers as $teacher)
+            @foreach ($courses as $course)
                 <tr class="">
-                    <td>{{ $teacher->id }}</td>
-                    <td>{{ $teacher->user_id }}</td>
-                    <td>{{ $teacher->user_name }}</td>
-                    <td>{{ $teacher->technology }}</td>
-                    <td>{{ $teacher->position }}</td>
-                    <td>{{ $teacher->mobile_number }}</td>
-                    <td>{{ $teacher->email }}</td>
+                    <td>{{ $course->id }}</td>
+                    <td>{{ $course->semester }}</td>
+                    <td>{{ $course->technology }}</td>
+                    <td>{{ $course->book_name }}</td>
                     <td>
-                        <a class="btn btn-warning btn-sm" href="{{ route('teacher.trash', ['id' => $teacher->id]) }}"
+                        <a class="btn btn-warning btn-sm" href="{{ route('teacher.delete', ['id' => $course->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Move to Trash">
                             <i class="bi bi-trash"></i>
                         </a>
-                        <a class="btn btn-primary btn-sm" href="{{ route('teacher.edit', ['id' => $teacher->id]) }}"
+                        <a class="btn btn-primary btn-sm" href="{{ route('course.edit', ['id' => $course->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                             <i class="bi-pencil-square"></i>
                         </a>
@@ -74,7 +85,7 @@
 </div>
 
 <div class="container text-center">
-    {!! $teachers->links() !!}
+    {!! $courses->links() !!}
 </div>
 
 @include('layout.footer')
