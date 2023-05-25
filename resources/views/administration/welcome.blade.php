@@ -132,7 +132,7 @@
 
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
-                        <div class="card text-center bg-warning bg-opacity-75">
+                        <div class="card text-center bg-info bg-opacity-75">
                             <a class="text-decoration-none" href="{{ route('student.addPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-person-fill-add"></i>
@@ -151,16 +151,16 @@
                             </a>
                         </div>
                     </div>
-                    {{-- <div class="col-md-3">
-                        <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('student.all') }}">
+                    <div class="col-md-3">
+                        <div class="card text-center bg-warning bg-opacity-75">
+                            <a class="text-decoration-none" href="{{ route('student.trashPage') }}">
                                 <div class="card-body text-black">
-                                    <i class="fs-4 bi-search"></i>
-                                    <h5 class="card-title">Search Student</h5>
+                                    <i class="fs-4 bi-trash3"></i>
+                                    <h5 class="card-title">Trashed Student</h5>
                                 </div>
                             </a>
                         </div>
-                    </div> --}}
+                    </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-danger bg-opacity-75">
                             <a class="text-decoration-none" href="{{ route('semester.update') }}">
@@ -217,16 +217,16 @@
                             </a>
                         </div>
                     </div>
-                    {{-- <div class="col-md-3">
+                    <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/administration/teacher_search.php">
+                            <a class="text-decoration-none" href="{{ route('teacher.trashPage') }}">
                                 <div class="card-body text-black">
-                                    <i class="fs-4 bi-search"></i>
-                                    <h5 class="card-title">Search Teacher</h5>
+                                    <i class="fs-4 bi-trash"></i>
+                                    <h5 class="card-title">Trasehd Teacher</h5>
                                 </div>
                             </a>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
 
             </div>
@@ -245,7 +245,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-warning bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/notice_add.php">
+                            <a class="text-decoration-none" href="{{ route('notice.addPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-plus-circle-fill"></i>
                                     <h5 class="card-title">Add Notice</h5>
@@ -255,7 +255,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/notice_all.php">
+                            <a class="text-decoration-none" href="{{ route('notice.all') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-table"></i>
                                     <h5 class="card-title">All Notice</h5>

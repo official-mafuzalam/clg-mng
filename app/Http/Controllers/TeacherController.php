@@ -102,6 +102,47 @@ class TeacherController extends Controller
 
 
 
+    public function TeacherTrash($id)
+    {
+        $user = Teachers::find($id);
+
+        if (!is_null($user)) {
+            $user->delete();
+            return redirect('administration/teacher_all');
+        }
+    }
+
+    public function TeacherTrashPage()
+    {
+
+        $teachers = Teachers::onlyTrashed()->get();
+
+        $data = compact('teachers');
+
+        return view('administration/teacher_trash')->with($data);
+
+    }
+
+    public function TeacherDelete($id)
+    {
+        $user = Teachers::withTrashed()->find($id);
+
+        if (!is_null($user)) {
+            $user->forceDelete();
+            return redirect('administration/teacher_trash');
+        }
+    }
+
+    public function TeacherRestore($id)
+    {
+        $user = Teachers::withTrashed()->find($id);
+
+        if (!is_null($user)) {
+            $user->restore();
+            return redirect('administration/teacher_trash');
+        }
+    }
+
 
 
 

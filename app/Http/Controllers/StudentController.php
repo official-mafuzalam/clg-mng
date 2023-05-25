@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
-use Nette\Utils\Paginator;
 
 class StudentController extends Controller
 {
@@ -164,6 +163,45 @@ class StudentController extends Controller
 
     }
 
+    public function StudentTrash($id)
+    {
+        $user = Student::find($id);
 
+        if (!is_null($user)) {
+            $user->delete();
+            return redirect('administration/student_all');
+        }
+    }
+
+    public function StudentTrashPage()
+    {
+
+        $students = Student::onlyTrashed()->get();
+
+        $data = compact('students');
+
+        return view('administration/student_trash')->with($data);
+
+    }
+
+    public function StudentDelete($id)
+    {
+        $user = Student::withTrashed()->find($id);
+
+        if (!is_null($user)) {
+            $user->forceDelete();
+            return redirect('administration/student_trash');
+        }
+    }
+
+    public function StudentRestore($id)
+    {
+        $user = Student::withTrashed()->find($id);
+
+        if (!is_null($user)) {
+            $user->restore();
+            return redirect('administration/student_trash');
+        }
+    }
 
 }
