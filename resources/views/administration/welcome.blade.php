@@ -291,7 +291,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-warning bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/administration/result_publish.php">
+                            <a class="text-decoration-none" href="{{ route('result.publishPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-pencil-square"></i>
                                     <h5 class="card-title">Result Publish</h5>

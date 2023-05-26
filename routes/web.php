@@ -4,6 +4,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ResultController;
 use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -99,7 +100,7 @@ Route::group(['prefix' => 'administration'], function () {
     Route::post('course_add', [CourseController::class, 'CourseAdd'])->name('course.add');
 
     Route::get('course_all', [CourseController::class, 'CourseAllPage'])->name('course.allPage');
-   
+
     Route::get('/course_edit/{id}', [CourseController::class, 'CourseEdit'])->name('course.edit');
 
     Route::post('/course_update/{id}', [CourseController::class, 'CourseUpdate'])->name('course.update');
@@ -107,8 +108,12 @@ Route::group(['prefix' => 'administration'], function () {
     Route::get('/course_delete/{id}', [CourseController::class, 'CourseDelete'])->name('teacher.delete');
 
 
+    // Result Section
+    Route::get('/result_publish', [ResultController::class, 'ResultPublishPage'])->name('result.publishPage');
 
+    Route::post('/result_publish', [ResultController::class, 'ResultPublish'])->name('result.publish');
 
+    Route::get('/result_process', [ResultController::class, 'ResultProcess'])->name('result.process');
 
 
 
