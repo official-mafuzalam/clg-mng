@@ -38,6 +38,9 @@ class StudentController extends Controller
         $student->inserter_id = "100001";
         $student->save();
 
+        // Show success notification
+        session()->flash('success', 'New Student add successfully.');
+
         return redirect('administration/student_all');
 
     }
@@ -104,6 +107,9 @@ class StudentController extends Controller
             $student->inserter_id = "100001";
             $student->save();
 
+            // Show success notification
+            session()->flash('success', 'Student data updated successfully.');
+
             return redirect('administration/student_all');
 
         }
@@ -123,7 +129,7 @@ class StudentController extends Controller
                 ->paginate(20);
 
         } else {
-            $students = Student::paginate(20);
+            $students = [];
         }
 
         $data = [
@@ -131,6 +137,7 @@ class StudentController extends Controller
             'search_technology' => $search_technology,
             'search_semester' => $search_semester,
         ];
+
         return view('administration/semester_update')->with($data);
 
 
@@ -158,6 +165,8 @@ class StudentController extends Controller
             $students = Student::all();
         }
         $data = compact('students');
+        // Show success notification
+        session()->flash('success', 'Semester updated successfully.');
         return view('administration/semester_update')->with($data);
 
 
@@ -169,6 +178,9 @@ class StudentController extends Controller
 
         if (!is_null($user)) {
             $user->delete();
+
+            // Show success notification
+            session()->flash('success-trash', 'Student move to Trash successfully.');
             return redirect('administration/student_all');
         }
     }
@@ -190,6 +202,9 @@ class StudentController extends Controller
 
         if (!is_null($user)) {
             $user->forceDelete();
+
+            // Show success notification
+            session()->flash('success-delete', 'Student permanently deleted successfully.');
             return redirect('administration/student_trash');
         }
     }
@@ -200,6 +215,9 @@ class StudentController extends Controller
 
         if (!is_null($user)) {
             $user->restore();
+
+            // Show success notification
+            session()->flash('success', 'Student restore successfully.');
             return redirect('administration/student_trash');
         }
     }

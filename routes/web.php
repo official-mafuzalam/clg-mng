@@ -105,7 +105,7 @@ Route::group(['prefix' => 'administration'], function () {
 
     Route::post('/course_update/{id}', [CourseController::class, 'CourseUpdate'])->name('course.update');
 
-    Route::get('/course_delete/{id}', [CourseController::class, 'CourseDelete'])->name('teacher.delete');
+    Route::get('/course_delete/{id}', [CourseController::class, 'CourseDelete'])->name('course.delete');
 
 
     // Result Section
@@ -115,6 +115,14 @@ Route::group(['prefix' => 'administration'], function () {
 
     Route::get('/result_process', [ResultController::class, 'ResultProcess'])->name('result.process');
 
+    Route::post('/save_marks', [ResultController::class, 'ResultSaveMarks'])->name('save_marks');
 
+    Route::get('/result_check', [ResultController::class, 'ResultCheckPage'])->name('result.checkPage');
+
+    Route::post('/result_check', [ResultController::class, 'ResultCheck'])->name('result.check');
+
+    Route::get('/result_edit/{id}', [ResultController::class, 'ResultEdit'])->name('result.edit');
+
+    Route::post('/result_update/{id}', [ResultController::class, 'ResultUpdate'])->name('result.update');
 
 });

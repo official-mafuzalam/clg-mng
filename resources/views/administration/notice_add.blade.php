@@ -31,9 +31,7 @@
         </div>
         <br>
         <div class="input-group">
-            <textarea class="form-control" name="description" placeholder="Notice Description" required>
-                {{ $notice_data->description }}
-            </textarea>
+            <textarea class="form-control" name="description" placeholder="Notice Description" required>{{ $notice_data->description }}</textarea>
         </div>
         <br>
         <input class="btn btn-success" type="submit" value="Submit">

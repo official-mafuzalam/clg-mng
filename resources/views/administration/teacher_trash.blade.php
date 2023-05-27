@@ -1,10 +1,31 @@
 @include('layout.header')
 
+{{-- Alert --}}
+@if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+@if (session('success-trash'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ session('success-trash') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+@if (session('success-delete'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('success-delete') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
+
 <div class="container text-center">
     <a class="text-decoration-none" href="{{ url('/') }}">
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
-    <p class="fs-4">All Trashed Student List</p>
+    <p class="fs-4">All Teacher Trashed List</p>
 </div>
 
 

@@ -52,12 +52,12 @@
 </div>
 @if (!empty($courses))
     <div class="container text-center">
-        <form class="row g-3 d-flex" role="search" action="{{ route('result.publish') }}" method="POST">
+        <form class="row g-3 d-flex" role="search" action="" method="POST">
             @csrf
             <div class="col-md-3">
                 <div class="input-group">
-                    <input type="text" name="current_semester" class="form-control"
-                        value="{{ $search_semester ?? '' }}" readonly>
+                    <input type="text" name="semester" class="form-control" value="{{ $search_semester ?? '' }}"
+                        readonly>
                 </div>
             </div>
             <div class="col-md-3">
@@ -68,7 +68,7 @@
             </div>
             <div class="col-md-4">
                 <div class="input-group">
-                    <select id="technology" name="technology" class="cars form-control" required>
+                    <select id="technology" name="subject" class="cars form-control" required>
                         <option value="">Select Subject</option>
                         @foreach ($courses as $course)
                             <option value="{{ $course->book_name }}">{{ $course->book_name }}</option>
@@ -77,71 +77,11 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <button type="submit" class="btn btn-warning mb-3">Update</button>
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
             </div>
         </form>
     </div>
 @endif
-
-@if (!empty($students))
-    <div class="table-responsive">
-        <table class="table table-sm table-striped table-hover table-bordered border-primary">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">S_No</th>
-                    <th scope="col">User ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Technologoy</th>
-                    <th scope="col">Semester</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Clg/ID</th>
-                    <th scope="col">Roll No</th>
-                    <th scope="col">Mobile No</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                @foreach ($students as $student)
-                    <tr class="">
-                        <td>{{ $student->id }}</td>
-                        <td>{{ $student->user_id }}</td>
-                        <td>{{ $student->user_name }}</td>
-                        <td>{{ $student->technology }}</td>
-                        <td>{{ $student->current_semester }}</td>
-                        <td>{{ $student->admission_year }}</td>
-                        <td>{{ $student->gender }}</td>
-                        <td>{{ $student->clg_id }}</td>
-                        <td>{{ $student->roll_no }}</td>
-                        <td>{{ $student->mobile_number }}</td>
-                        <td>{{ $student->email }}</td>
-                        <td>
-                            <a class="btn btn-warning btn-sm"
-                                href="{{ route('student.trash', ['id' => $student->id]) }}" role="button"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Move to Trash">
-                                <i class="bi bi-trash"></i>
-                            </a>
-                            <a class="btn btn-primary btn-sm"
-                                href="{{ route('student.edit', ['id' => $student->id]) }}"
-                                role="button"data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
-                                <i class="bi-pencil-square"></i>
-                            </a>
-                        </td>
-                    </tr>
-                @endforeach
-
-            </tbody>
-        </table>
-    </div>
-@else
-    <p>Not Found</p>
-@endif
-
-
-
-
 
 
 

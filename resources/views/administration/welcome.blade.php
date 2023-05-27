@@ -301,10 +301,10 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/administration/result_check.php">
+                            <a class="text-decoration-none" href="{{ route('result.checkPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-bar-chart-line-fill"></i>
-                                    <h5 class="card-title">Results</h5>
+                                    <h5 class="card-title">Result Check</h5>
                                 </div>
                             </a>
                         </div>

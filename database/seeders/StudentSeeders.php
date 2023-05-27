@@ -16,7 +16,7 @@ class StudentSeeders extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 1; $i < 40; $i++) {
+        for ($i = 1; $i < 100; $i++) {
 
 
             $student = new Student;

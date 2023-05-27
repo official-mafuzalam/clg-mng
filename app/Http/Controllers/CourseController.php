@@ -32,6 +32,8 @@ class CourseController extends Controller
         $course->book_name = $request['book_name'];
         $course->save();
 
+        // Show success notification
+        session()->flash('success', 'Course added successfully.');
         return redirect('administration/course_all');
 
 
@@ -92,6 +94,9 @@ class CourseController extends Controller
             $course->book_name = $request['book_name'];
             $course->save();
 
+            // Show success notification
+            session()->flash('success', 'Course data updated successfully.');
+
             return redirect('administration/course_all');
         }
     }
@@ -106,6 +111,7 @@ class CourseController extends Controller
 
             $course->delete();
 
+            session()->flash('success-delete', 'Course data delete successfully.');
             return redirect('administration/course_all');
         }
     }

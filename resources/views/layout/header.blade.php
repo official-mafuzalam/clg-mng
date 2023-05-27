@@ -13,11 +13,18 @@
     <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/b3e3482d82.css" crossorigin="anonymous"> -->
 
     <title>Collage Management</title>
+    <style>
+        @media print {
+            .noPrint {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav class="navbar sticky-top bg-body-tertiary" style="background-color: thistle">
+    <nav class="navbar sticky-top bg-body-tertiary noPrint" style="background-color: thistle">
         <div class="container-fluid">
             <div class="navbar-brand fs-6">
 

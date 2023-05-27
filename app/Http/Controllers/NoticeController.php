@@ -25,7 +25,6 @@ class NoticeController extends Controller
     public function NoticeAdd(Request $request)
     {
 
-
         $notice = new Notice;
 
         $notice->category = $request['category'];
@@ -33,6 +32,7 @@ class NoticeController extends Controller
         $notice->description = $request['description'];
         $notice->save();
 
+        session()->flash('success', 'New Notice added successfully.');
         return redirect('administration/notice_all');
 
     }
@@ -81,6 +81,9 @@ class NoticeController extends Controller
             $notice->description = $request['description'];
             $notice->save();
 
+            // Show success notification
+            session()->flash('success', 'Notice data updated successfully.');
+
             return redirect('administration/notice_all');
         }
     }
@@ -107,6 +110,7 @@ class NoticeController extends Controller
             $notice->status = 0;
             $notice->save();
 
+            session()->flash('success-trash', 'Notice move to Archive successfully.');
             return redirect('administration/notice_all');
         }
 
@@ -124,6 +128,7 @@ class NoticeController extends Controller
             $notice->status = 1;
             $notice->save();
 
+            session()->flash('success', 'Notice Active successfully.');
             return redirect('administration/notice_archive');
         }
 
@@ -141,6 +146,7 @@ class NoticeController extends Controller
 
             $notice->delete();
 
+            session()->flash('success-delete', 'Notice delete permanently successfully.');
             return redirect('administration/notice_archive');
         }
 

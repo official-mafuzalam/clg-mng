@@ -35,7 +35,8 @@ class TeacherController extends Controller
         $teacher->inserter_id = "100001";
         $teacher->save();
 
-        return redirect('administration/student_all');
+        session()->flash('success', 'New Teacher added successfully.');
+        return redirect('administration/teacher_all');
 
     }
 
@@ -95,6 +96,9 @@ class TeacherController extends Controller
             $teacher->email = $request['email'];
             $teacher->save();
 
+            // Show success notification
+            session()->flash('success', 'Teacher data updated successfully.');
+
             return redirect('administration/teacher_all');
 
         }
@@ -108,6 +112,8 @@ class TeacherController extends Controller
 
         if (!is_null($user)) {
             $user->delete();
+
+            session()->flash('success-trash', 'Teacher move to Trash successfully.');
             return redirect('administration/teacher_all');
         }
     }
@@ -129,6 +135,8 @@ class TeacherController extends Controller
 
         if (!is_null($user)) {
             $user->forceDelete();
+
+            session()->flash('success-delete', 'Teacher permanently deleted successfully.');
             return redirect('administration/teacher_trash');
         }
     }
@@ -139,6 +147,8 @@ class TeacherController extends Controller
 
         if (!is_null($user)) {
             $user->restore();
+
+            session()->flash('success', 'Teacher restore successfully.');
             return redirect('administration/teacher_trash');
         }
     }
