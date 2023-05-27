@@ -17,72 +17,72 @@ class CourseSeeders extends Seeder
 
             $course = new Courses;
 
-            $course->semester = "7th";
+            $course->semester = "1st";
             $course->technology = "Computer";
-            $course->book_name = "Subject - 7";
+            $course->book_name = "Subject - 1";
             $course->save();
         }
         for ($i = 1; $i < 10; $i++) {
 
             $course = new Courses;
 
-            $course->semester = "7th";
+            $course->semester = "1st";
             $course->technology = "Graphic";
-            $course->book_name = "Subject - 7";
+            $course->book_name = "Subject - 1";
             $course->save();
         }
         for ($i = 1; $i < 10; $i++) {
 
             $course = new Courses;
 
-            $course->semester = "7th";
+            $course->semester = "1st";
             $course->technology = "RAC";
-            $course->book_name = "Subject - 7";
+            $course->book_name = "Subject - 1";
             $course->save();
         }
         for ($i = 1; $i < 10; $i++) {
 
             $course = new Courses;
 
-            $course->semester = "7th";
+            $course->semester = "1st";
             $course->technology = "Civil";
-            $course->book_name = "Subject - 7";
+            $course->book_name = "Subject - 1";
             $course->save();
         }
         for ($i = 1; $i < 10; $i++) {
 
             $course = new Courses;
 
-            $course->semester = "7th";
+            $course->semester = "1st";
             $course->technology = "Electronic";
-            $course->book_name = "Subject - 7";
+            $course->book_name = "Subject - 1";
             $course->save();
         }
         for ($i = 1; $i < 10; $i++) {
 
             $course = new Courses;
 
-            $course->semester = "7th";
+            $course->semester = "1st";
             $course->technology = "Electrical";
-            $course->book_name = "Subject - 7";
+            $course->book_name = "Subject - 1";
             $course->save();
         }
         for ($i = 1; $i < 10; $i++) {
 
             $course = new Courses;
 
-            $course->semester = "7th";
+            $course->semester = "1st";
             $course->technology = "Architecture";
-            $course->book_name = "Subject - 7";
+            $course->book_name = "Subject - 1";
             $course->save();
         }
         for ($i = 1; $i < 10; $i++) {
 
             $course = new Courses;
 
-            $course->semester = "7th";
+            $course->semester = "1st";
             $course->technology = "Mechanical";
-            $course->book_name = "Subject - 7";
+            $course->book_name = "Subject - 1";
             $course->save();
         }
 
