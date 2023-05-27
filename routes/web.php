@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdministrationController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\DepositController;
 use App\Models\Student;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -20,9 +22,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('administration/welcome');
-});
+Route::get('/', [AdministrationController::class, 'HomePage'])->name('home');
 
 Route::group(['prefix' => 'administration'], function () {
 
@@ -124,5 +124,16 @@ Route::group(['prefix' => 'administration'], function () {
     Route::get('/result_edit/{id}', [ResultController::class, 'ResultEdit'])->name('result.edit');
 
     Route::post('/result_update/{id}', [ResultController::class, 'ResultUpdate'])->name('result.update');
+
+    // Deposit Section
+
+    Route::get('/depositor_find', [DepositController::class, 'DepositFindPage'])->name('deposit.findPage');
+
+    Route::get('/deposit_form/{id}', [DepositController::class, 'DepositForm'])->name('deposit.form');
+
+    Route::post('/deposit_confirm', [DepositController::class, 'DepositConfirm'])->name('deposit.confirm');
+
+    Route::get('/deposit_print/{id}', [DepositController::class, 'DepositPrint'])->name('deposit.print');
+
 
 });

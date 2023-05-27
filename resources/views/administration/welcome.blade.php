@@ -77,7 +77,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Total Student</h5>
                                 <p class="card-text fs-3">
-                                    3 </p>
+                                    {{ $totalStudents }}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -86,7 +87,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Total Teacher</h5>
                                 <p class="card-text fs-3">
-                                    6 </p>
+                                    {{ $totalTeachers }}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -95,7 +97,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Running Notice</h5>
                                 <p class="card-text fs-3">
-                                    0 </p>
+                                    {{ $totalNotice }}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -104,7 +107,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Today Total Deposit</h5>
                                 <p class="card-text fs-3">
-                                    0.00৳ </p>
+                                    {{ $totalAmount }} ৳
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -113,7 +117,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">Today My Deposit</h5>
                                 <p class="card-text fs-3">
-                                    0.00৳ </p>
+                                  {{$totalOwnAmount}}  ৳ 
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -327,7 +332,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-warning bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/administration/fees_depositor_find.php">
+                            <a class="text-decoration-none" href="{{ route('deposit.findPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-currency-dollar"></i>
                                     <h5 class="card-title">Fees Deposit</h5>
