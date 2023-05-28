@@ -136,4 +136,7 @@ Route::group(['prefix' => 'administration'], function () {
     Route::get('/deposit_print/{id}', [DepositController::class, 'DepositPrint'])->name('deposit.print');
 
 
+    Route::get('/deposit_quarry', [DepositController::class, 'DepositQuarry'])->name('deposit.quarry');
+    // 
+
 });

@@ -117,7 +117,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Today My Deposit</h5>
                                 <p class="card-text fs-3">
-                                  {{$totalOwnAmount}}  ৳ 
+                                    {{ $totalOwnAmount }} ৳
                                 </p>
                             </div>
                         </div>
@@ -342,7 +342,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="../other/administration/daily_deposit_query.php">
+                            <a class="text-decoration-none" href="{{ route('deposit.quarry') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-currency-dollar"></i>
                                     <h5 class="card-title">Daily Deposit query</h5>

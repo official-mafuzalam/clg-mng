@@ -14,5 +14,19 @@ class Student extends Model
 
     protected $table = "students";
     protected $primaryKey = "id";
+
+    // protected $fillable = [
+    //     'user_id',
+    //     'user_name',
+    //     'gender',
+    //     'technology',
+    //     'admission_year',
+    //     'current_semester',
+    //     'clg_id',
+    //     'roll_no',
+    //     'mobile_number',
+    //     'email',
+    // ];
+
     
 }

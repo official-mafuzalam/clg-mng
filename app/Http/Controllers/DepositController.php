@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Deposits;
 use App\Models\Student;
+use Illuminate\Support\Facades\Mail;
 
 class DepositController extends Controller
 {
@@ -86,9 +87,29 @@ class DepositController extends Controller
         // Show success notification
         session()->flash('success', 'Deposit completed successfully.');
 
+        $email = $request['email'];
+
+        $data = [
+            'random_num' => $random_num,
+            'user_id' => $request['user_id'],
+            'user_name' => $request['user_name'],
+            'technology' => $request['technology'],
+            'current_semester' => $request['current_semester'],
+            'clg_id' => $request['clg_id'],
+            'roll_no' => $request['roll_no'],
+            'mobile_number' => $request['mobile_number'],
+            'deposit_category' => $request['deposit_category'],
+            'deposit_amount' => $request['deposit_amount'],
+            'comment' => $request['comment'],
+            'date' => $request['date']
+        ];
+
+        Mail::send('administration.confirmation', $data, function ($message) use ($email) {
+            $message->to($email)
+                ->subject('Deposit Confirmation');
+        });
+
         return redirect()->route('deposit.print', ['id' => $random_num]);
-
-
 
     }
 
@@ -103,6 +124,25 @@ class DepositController extends Controller
     }
 
 
+    public function DepositQuarry(Request $request)
+    {
+
+        $search_date_1 = isset($request['date_1']) ? $request['date_1'] : "";
+        $search_date_2 = isset($request['date_2']) ? $request['date_2'] : "";
+
+        if ($search_date_1 != "" && $search_date_2 != "") {
+            $deposits = Deposits::whereBetween('date', [$search_date_1, $search_date_2])
+                ->paginate(20);
+        } else {
+            $deposits = Deposits::paginate(20);
+        }
+
+
+        $data = compact('deposits');
+
+        return view('administration/deposit_quarry')->with($data);
+
+    }
 
 
 
