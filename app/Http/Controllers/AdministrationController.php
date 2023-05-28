@@ -18,7 +18,8 @@ class AdministrationController extends Controller
 
         $totalStudents = Student::count();
         $totalTeachers = Teachers::count();
-        $totalNotice = Notice::count();
+        $notice = Notice::where('status', 1)->get();
+        $totalNotice = count($notice);
         $totalAmount = Deposits::sum('deposit_amount');
         $totalOwnAmount = Deposits::where('inserter_id', '1000001')->sum('deposit_amount');
 

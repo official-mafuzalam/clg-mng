@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class StudentController extends Controller
 {
@@ -40,6 +41,28 @@ class StudentController extends Controller
 
         // Show success notification
         session()->flash('success', 'New Student add successfully.');
+
+
+        // Mail to Student for confirmation
+        $email = $request['email'];
+
+        $data = [
+            'user_id' => $random_num,
+            'user_name' => $request['user_name'],
+            'technology' => $request['technology'],
+            'current_semester' => $request['current_semester'],
+            'gender' => $request['gender'],
+            'clg_id' => $request['clg_id'],
+            'roll_no' => $request['roll_no'],
+            'mobile_number' => $request['mobile_number'],
+            'email' => $request['email']
+        ];
+
+        Mail::send('administration.student_add_confirmation', $data, function ($message) use ($email) {
+            $message->to($email)
+                ->subject('Admission Confirmation');
+        });
+
 
         return redirect('administration/student_all');
 

@@ -11,14 +11,19 @@ use Illuminate\Support\Facades\Validator;
 class StudentController extends Controller
 {
 
-
-
     public function all_students()
     {
 
         $students = Student::all();
 
-        if (count($students) > 0) {
+        if ($students->isEmpty()) {
+
+            $response = [
+                'message' => 'Students not found',
+                'status' => 0
+            ];
+
+        } else {
 
             $response = [
                 'message' => count($students) . ' Students found',
@@ -26,14 +31,6 @@ class StudentController extends Controller
                 'num_of_data' => count($students),
                 'data' => $students
             ];
-
-        } else {
-
-            $response = [
-                'message' => 'Students not found',
-                'status' => 0
-            ];
-
         }
         ;
 
@@ -46,12 +43,13 @@ class StudentController extends Controller
 
         $student = Student::where('user_id', $user_id)->get();
 
-        if (is_null($student)) {
+        if ($student->isEmpty()) {
 
             $response = [
                 'message' => 'Student not found',
                 'status' => 0
             ];
+
         } else {
 
             $response = [
@@ -62,9 +60,9 @@ class StudentController extends Controller
             ];
 
         }
+        ;
 
         return response()->json($response, 200);
-
     }
 
     public function student_technology($technology)

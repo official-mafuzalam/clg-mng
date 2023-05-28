@@ -104,7 +104,7 @@ class DepositController extends Controller
             'date' => $request['date']
         ];
 
-        Mail::send('administration.confirmation', $data, function ($message) use ($email) {
+        Mail::send('administration.deposit_confirmation', $data, function ($message) use ($email) {
             $message->to($email)
                 ->subject('Deposit Confirmation');
         });

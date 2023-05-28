@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Teachers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class TeacherController extends Controller
 {
@@ -36,6 +37,24 @@ class TeacherController extends Controller
         $teacher->save();
 
         session()->flash('success', 'New Teacher added successfully.');
+
+        // Mail to Student for confirmation
+        $email = $request['email'];
+        $data = [
+            'user_id' => $random_num,
+            'user_name' => $request['user_name'],
+            'technology' => $request['technology'],
+            'position' => $request['position'],
+            'mobile_number' => $request['mobile_number'],
+            'email' => $request['email']
+        ];
+
+        Mail::send('administration.teacher_add_confirmation', $data, function ($message) use ($email) {
+            $message->to($email)
+                ->subject('Join to Best Polytechnic Institute Confirmation');
+        });
+
+
         return redirect('administration/teacher_all');
 
     }
