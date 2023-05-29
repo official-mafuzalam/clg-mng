@@ -36,6 +36,7 @@ Route::prefix('api-v1')->group(function () {
 
     Route::get('student/tech_sem/{technology}/{semester}', [StudentController::class, 'student_tech_sem']);
 
+    Route::post('student/add', [StudentController::class, 'student_add']);
 
 
     // Teacher Section
@@ -71,6 +72,8 @@ Route::prefix('api-v1')->group(function () {
     // Notice Section
 
     Route::get('notices/{status}', [NoticeController::class, 'notices']);
+
+    Route::post('notice/add', [NoticeController::class, 'notice_add']);
 
 
 

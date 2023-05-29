@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Teachers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 
 class TeacherController extends Controller
 {
@@ -22,7 +23,11 @@ class TeacherController extends Controller
     public function TeacherAdd(Request $request)
     {
 
-        $random_num = rand(100000, 999999);
+        $random_num = null;
+        do {
+            $random_num = rand(10000, 99999);
+        } while (DB::table('students')->where('user_id', $random_num)->exists());
+
 
         $teacher = new Teachers;
 
@@ -38,6 +43,7 @@ class TeacherController extends Controller
 
         session()->flash('success', 'New Teacher added successfully.');
 
+        
         // Mail to Student for confirmation
         $email = $request['email'];
         $data = [

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Deposits;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class StudentController extends Controller
 {
@@ -119,6 +121,102 @@ class StudentController extends Controller
 
     }
 
+    public function student_add(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+
+            'user_id' => ['required', 'unique:students'],
+            'technology' => ['required'],
+            'admission_year' => ['required'],
+            'current_semester' => ['required'],
+            'user_name' => ['required'],
+            'gender' => ['required'],
+            'clg_id' => ['required'],
+            'roll_no' => ['required'],
+            'mobile_number' => ['required'],
+            'email' => ['required', 'email', 'unique:students'],
+            'inserter_id' => ['required'],
+
+        ]);
+
+        if ($validator->fails()) {
+
+            return response()->json($validator->messages(), 400);
+
+        } else {
+
+            $random_num = null;
+            do {
+                $random_num = rand(10000, 99999);
+            } while (DB::table('students')->where('user_id', $random_num)->exists());
+
+            $data = [
+
+                'user_id' => $random_num,
+                'technology' => $request->technology,
+                'admission_year' => $request->admission_year,
+                'current_semester' => $request->current_semester,
+                'user_name' => $request->user_name,
+                'gender' => $request->gender,
+                'clg_id' => $request->clg_id,
+                'roll_no' => $request->roll_no,
+                'mobile_number' => $request->mobile_number,
+                'email' => $request->email,
+                'inserter_id' => $request->inserter_id
+
+            ];
+
+            DB::beginTransaction();
+
+            try {
+
+                $student = Student::create($data);
+                DB::commit();
+
+                // Mail to Student for confirmation
+                $email = $request['email'];
+
+                Mail::send('administration.student_add_confirmation', $data, function ($message) use ($email) {
+                    $message->to($email)
+                        ->subject('Admission Confirmation');
+                });
+
+            } catch (\Exception $e) {
+
+                p($e->getMessage());
+                $student = null;
+
+            }
+
+            if ($student != null) {
+
+                return response()->json([
+                    'message' => 'Student added successfully'
+                ], 200);
+
+            } else {
+
+                return response()->json([
+                    'message' => 'Internal server error'
+                ], 500);
+
+            }
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -153,16 +251,6 @@ class StudentController extends Controller
 
 
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * Display a listing of the resource.

@@ -11,4 +11,15 @@ class Notice extends Model
 
     protected $table = "notices";
     protected $primaryKey = "id";
+
+
+
+    protected $fillable = [
+
+        'category',
+        'title',
+        'description',
+
+    ];
+
 }
