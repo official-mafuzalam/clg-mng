@@ -33,7 +33,7 @@ class ComposerStaticInit270c905a9912e7eb32a355970e234f36
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
-        'bd2a92ecd213a55bb34b466184ec9a25' => __DIR__ . '/../..' . '/App/Http/Helper/helper.php',
+        'b6185d03aa7d3c2139a429dcadd32265' => __DIR__ . '/../..' . '/app/Http/Helper/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -513,6 +513,12 @@ class ComposerStaticInit270c905a9912e7eb32a355970e234f36
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdministrationController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdministrationController.php',
+        'App\\Http\\Controllers\\Api\\CourseController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/CourseController.php',
+        'App\\Http\\Controllers\\Api\\DepositController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/DepositController.php',
+        'App\\Http\\Controllers\\Api\\NoticeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/NoticeController.php',
+        'App\\Http\\Controllers\\Api\\ResultController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ResultController.php',
+        'App\\Http\\Controllers\\Api\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/StudentController.php',
+        'App\\Http\\Controllers\\Api\\TeacherController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/TeacherController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CourseController' => __DIR__ . '/../..' . '/app/Http/Controllers/CourseController.php',
         'App\\Http\\Controllers\\DepositController' => __DIR__ . '/../..' . '/app/Http/Controllers/DepositController.php',
