@@ -22,7 +22,56 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', [AdministrationController::class, 'HomePage'])->name('home');
+
+Route::get('/', function () {
+
+    if (Auth::check()) {
+        if (auth()->user()->type == 'administration') {
+            return redirect()->route('administration.welcome');
+        } else if (auth()->user()->type == 'manager') {
+            return redirect()->route('manager.home');
+        } else {
+            return redirect()->route('home');
+        }
+    } else {
+        return redirect()->route('login');
+    }
+
+});
+
+Auth::routes();
+
+/*------------------------------------------
+--------------------------------------------
+All Normal Users Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+
+    Route::get('/user/home', [HomeController::class, 'index'])->name('home');
+});
+
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:administration'])->group(function () {
+
+    Route::get('/administration/welcome', [AdministrationController::class, 'HomePage'])->name('administration.welcome');
+});
+
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+});
+
+// Route::get('/', [AdministrationController::class, 'HomePage'])->name('home');
 
 Route::group(['prefix' => 'administration'], function () {
 
@@ -140,3 +189,6 @@ Route::group(['prefix' => 'administration'], function () {
     // 
 
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
