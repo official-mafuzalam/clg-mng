@@ -9,11 +9,30 @@ use App\Models\Results;
 use App\Models\Notice;
 use App\Models\Student;
 use App\Models\Deposits;
+use Illuminate\View\View;
 
 class AdministrationController extends Controller
 {
 
-    public function HomePage()
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+
+    public function HomePage(): View
     {
 
         $totalStudents = Student::count();

@@ -26,60 +26,6 @@
     document.getElementById("date").innerText = n;
 </script>
 
-{{-- <script>
-        //Get the button
-        let mybutton = document.getElementById("btn-back-to-top");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            if (
-                document.body.scrollTop > 20 ||
-                document.documentElement.scrollTop > 20
-            ) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.addEventListener("click", backToTop);
-
-        function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script> --}}
-
-<!-- Notice Item Delete -->
-<script>
-    var deleteButtons = document.getElementsByClassName("dlt-notice");
-    for (var i = 0; i < deleteButtons.length; i++) {
-        deleteButtons[i].onclick = function() {
-            var id = this.id.split("-")[1];
-            var btn = 'hos';
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "../delete/dlt_notice.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    if (response.status === "success") {
-                        alert("Selected Item Delete Successfully");
-                        location.reload();
-                    } else {
-                        alert("Error deleting item");
-                    }
-                }
-            }
-            xhr.send("id=" + id);
-        }
-    }
-</script>
-
 
 <!-- Bootstrap Script Link -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
