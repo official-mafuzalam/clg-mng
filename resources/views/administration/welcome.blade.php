@@ -1,4 +1,4 @@
-@include('layout.header_main')
+@include('layout.header')
 
 
 <div class="container-fluid">

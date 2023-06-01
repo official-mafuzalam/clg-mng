@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdministrationController;
+use App\Http\Controllers\AccountantsController;
+use App\Http\Controllers\Dep_TeacherController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\NoticeController;
@@ -28,10 +30,10 @@ Route::get('/', function () {
     if (Auth::check()) {
         if (auth()->user()->type == 'administration') {
             return redirect()->route('administration.welcome');
-        } else if (auth()->user()->type == 'manager') {
-            return redirect()->route('manager.home');
+        } else if (auth()->user()->type == 'accountants') {
+            return redirect()->route('accountants.welcome');
         } else {
-            return redirect()->route('home');
+            return redirect()->route('dep_teacher.welcome');
         }
     } else {
         return redirect()->route('login');
@@ -46,9 +48,9 @@ Auth::routes();
 All Normal Users Routes List
 --------------------------------------------
 --------------------------------------------*/
-Route::middleware(['auth', 'user-access:user'])->group(function () {
+Route::middleware(['auth', 'user-access:dep_teacher'])->group(function () {
 
-    Route::get('/user/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/dep_teacher/welcome', [Dep_TeacherController::class, 'HomePage'])->name('dep_teacher.welcome');
 });
 
 /*------------------------------------------
@@ -66,9 +68,9 @@ Route::middleware(['auth', 'user-access:administration'])->group(function () {
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
-Route::middleware(['auth', 'user-access:manager'])->group(function () {
+Route::middleware(['auth', 'user-access:accountants'])->group(function () {
 
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('/accountants/welcome', [AccountantsController::class, 'HomePage'])->name('accountants.welcome');
 });
 
 // Route::get('/', [AdministrationController::class, 'HomePage'])->name('home');
@@ -189,6 +191,3 @@ Route::group(['prefix' => 'administration'], function () {
     // 
 
 });
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
