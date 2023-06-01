@@ -5,6 +5,7 @@
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
     <p class="fs-4">{{ $title }}</p>
+    <p class="fs-4">{{$userType}}</p>
 </div>
 
 <div class="container text-center">

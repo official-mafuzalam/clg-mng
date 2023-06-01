@@ -11,15 +11,26 @@ class StudentController extends Controller
 {
 
 
+
+
+
     public function StudentAddPage()
     {
+        $sessionData = session()->all();
+        $userType = $sessionData['user']['type'];
+
+
+
         $student_data = new Student;
 
         $title = "Add Student details";
         $url = url('administration/student_add');
-        $data = compact('student_data', 'url', 'title');
+        $data = compact('student_data', 'url', 'title', 'userType');
 
-        return view('administration/student_add')->with($data);
+        return view('administration.student_add')->with($data);
+
+
+
     }
 
     public function StudentAdd(Request $request)

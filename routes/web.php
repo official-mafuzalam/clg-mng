@@ -49,40 +49,41 @@ Auth::routes();
 All administration Routes List
 --------------------------------------------
 --------------------------------------------*/
+
 Route::middleware(['auth', 'user-access:administration'])->group(function () {
 
     Route::get('/administration/welcome', [AdministrationController::class, 'HomePage'])->name('administration.welcome');
 
-    Route::group(['prefix' => '/administration'], function () {
+    Route::group(['prefix' => 'administration'], function () {
 
-        Route::get('/session', function () {
+        Route::get('session', function () {
 
             $session = session()->all();
             p($session);
 
         });
         // Student Section
-        Route::get('/student_add', [StudentController::class, 'StudentAddPage'])->name('student.addPage');
+        Route::get('/student_add', [StudentController::class, 'StudentAddPage'])->name('administration_student.addPage');
 
-        Route::post('/student_add', [StudentController::class, 'StudentAdd'])->name('student.add');
+        Route::post('/student_add', [StudentController::class, 'StudentAdd'])->name('administration_student.add');
 
-        Route::get('/student_all', [StudentController::class, 'StudentALL'])->name('student.all');
+        Route::get('/student_all', [StudentController::class, 'StudentALL'])->name('administration_student.all');
 
-        Route::get('/student_edit/{id}', [StudentController::class, 'StudentEdit'])->name('student.edit');
+        Route::get('/student_edit/{id}', [StudentController::class, 'StudentEdit'])->name('administration_student.edit');
 
-        Route::post('/student_update/{id}', [StudentController::class, 'StudentUpdate'])->name('student.update');
+        Route::post('/student_update/{id}', [StudentController::class, 'StudentUpdate'])->name('administration_student.update');
 
         Route::get('/semester_update', [StudentController::class, 'SemesterUpdateSearch']);
 
         Route::post('/semester_update', [StudentController::class, 'SemesterUpdate'])->name('semester.update');
 
-        Route::get('/student_trash', [StudentController::class, 'StudentTrashPage'])->name('student.trashPage');
+        Route::get('/student_trash', [StudentController::class, 'StudentTrashPage'])->name('administration_student.trashPage');
 
-        Route::get('/student_trash/{id}', [StudentController::class, 'StudentTrash'])->name('student.trash');
+        Route::get('/student_trash/{id}', [StudentController::class, 'StudentTrash'])->name('administration_student.trash');
 
-        Route::get('/student_delete/{id}', [StudentController::class, 'StudentDelete'])->name('student.delete');
+        Route::get('/student_delete/{id}', [StudentController::class, 'StudentDelete'])->name('administration_student.delete');
 
-        Route::get('/student_restore/{id}', [StudentController::class, 'StudentRestore'])->name('student.restore');
+        Route::get('/student_restore/{id}', [StudentController::class, 'StudentRestore'])->name('administration_student.restore');
 
 
 
@@ -191,7 +192,6 @@ Route::middleware(['auth', 'user-access:dep_teacher'])->group(function () {
 
     Route::get('/dep_teacher/welcome', [Dep_TeacherController::class, 'HomePage'])->name('dep_teacher.welcome');
 
-
     Route::group(['prefix' => 'dep_teacher'], function () {
 
         Route::get('session', function () {
@@ -200,7 +200,10 @@ Route::middleware(['auth', 'user-access:dep_teacher'])->group(function () {
             p($session);
 
         });
-        
+
+        Route::get('/student_add', [StudentController::class, 'StudentAddPage'])->name('student.addPage');
+
+
     });
 
 });
