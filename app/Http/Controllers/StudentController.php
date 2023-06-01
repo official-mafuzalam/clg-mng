@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\View\View;
 
 class StudentController extends Controller
 {
+
+
     public function StudentAddPage()
     {
         $student_data = new Student;

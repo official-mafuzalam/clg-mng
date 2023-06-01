@@ -34,6 +34,7 @@ class AdministrationController extends Controller
 
     public function HomePage(): View
     {
+        $userName = session('user.name');
 
         $totalStudents = Student::count();
         $totalTeachers = Teachers::count();
@@ -42,7 +43,7 @@ class AdministrationController extends Controller
         $totalAmount = Deposits::sum('deposit_amount');
         $totalOwnAmount = Deposits::where('inserter_id', '1000001')->sum('deposit_amount');
 
-        $data = compact('totalStudents', 'totalTeachers', 'totalNotice', 'totalAmount', 'totalOwnAmount');
+        $data = compact('totalStudents', 'totalTeachers', 'totalNotice', 'totalAmount', 'totalOwnAmount', 'userName');
 
         return view('administration/welcome')->with($data);
 

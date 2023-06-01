@@ -39,12 +39,18 @@
         <div class="input-group">
             <select name="position" id="position" class="cars form-control" required>
                 <option value="" selected>Select Position</option>
-                <option value="CI" {{ $teacher_data->position == 'CI' ? 'selected' : '' }}>CI</option>
-                <option value="JR Instructor" {{ $teacher_data->position == 'JR Instructor' ? 'selected' : '' }}>JR
+                <option value="Admin" {{ $teacher_data->position == 'Admin' ? 'selected' : '' }} data-type-value="1">
+                    Admin</option>
+                <option value="CI" {{ $teacher_data->position == 'CI' ? 'selected' : '' }} data-type-value="0">CI
+                </option>
+                <option value="JR Instructor" {{ $teacher_data->position == 'JR Instructor' ? 'selected' : '' }}
+                    data-type-value="0">JR
                     Instructor</option>
-                <option value="Accountants" {{ $teacher_data->position == 'Accountants' ? 'selected' : '' }}>
+                <option value="Accountants" {{ $teacher_data->position == 'Accountants' ? 'selected' : '' }}
+                    data-type-value="2">
                     Accountants</option>
-                <option value="Others" {{ $teacher_data->position == 'Others' ? 'selected' : '' }}>Others</option>
+                <option value="Others" {{ $teacher_data->position == 'Others' ? 'selected' : '' }} data-type-value="0">
+                    Others</option>
             </select>
         </div>
         <br>
@@ -56,6 +62,11 @@
         <div class="input-group">
             <input type="tel" name="email" id="name" class="form-control" value="{{ $teacher_data->email }}"
                 placeholder="Email" required>
+        </div>
+        <br>
+        <div class="input-group">
+            <input type="text" name="password" id="password" class="form-control"
+                value="{{ $teacher_data->password }}" placeholder="Password">
         </div>
         <br>
         <input class="submit btn btn-success save-btn" name="teacher_submit" type="submit" value="Save">

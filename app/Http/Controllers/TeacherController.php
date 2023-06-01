@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teachers;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class TeacherController extends Controller
 {
@@ -43,7 +45,17 @@ class TeacherController extends Controller
 
         session()->flash('success', 'New Teacher added successfully.');
 
+        // Create Teacher User login
         
+        $user = new User;
+
+        $user->user_id = $random_num;
+        $user->name = $request['user_name'];
+        $user->email = $request['email'];
+        $user->password = Hash::make($request['password']);
+        $user->save();
+
+
         // Mail to Student for confirmation
         $email = $request['email'];
         $data = [
