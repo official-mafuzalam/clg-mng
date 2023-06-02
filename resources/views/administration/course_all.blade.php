@@ -25,7 +25,7 @@
     <a class="text-decoration-none" href="{{ url('/') }}">
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
-    <a class="text-decoration-none" href="{{ route('course.allPage') }}">
+    <a class="text-decoration-none" href="{{ route('administration_course.allPage') }}">
         <p class="fs-4">All Course List</p>
     </a>
 
@@ -90,11 +90,11 @@
                     <td>{{ $course->technology }}</td>
                     <td>{{ $course->book_name }}</td>
                     <td>
-                        <a class="btn btn-warning btn-sm" href="{{ route('course.delete', ['id' => $course->id]) }}"
+                        <a class="btn btn-warning btn-sm" href="{{ route('administration_course.delete', ['id' => $course->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Move to Trash">
                             <i class="bi bi-trash"></i>
                         </a>
-                        <a class="btn btn-primary btn-sm" href="{{ route('course.edit', ['id' => $course->id]) }}"
+                        <a class="btn btn-primary btn-sm" href="{{ route('administration_course.edit', ['id' => $course->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                             <i class="bi-pencil-square"></i>
                         </a>

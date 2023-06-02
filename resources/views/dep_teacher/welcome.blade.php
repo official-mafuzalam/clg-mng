@@ -132,7 +132,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('student.addPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_student.addPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-person-fill-add"></i>
                                     <h5 class="card-title">Add Student</h5>
@@ -142,7 +142,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-primary bg-opacity-50">
-                            <a class="text-decoration-none" href="{{ route('student.all') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_student.all') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-people"></i>
                                     <h5 class="card-title">All Student</h5>
@@ -152,7 +152,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-warning bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('student.trashPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_student.trashPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-trash3"></i>
                                     <h5 class="card-title">Trashed Student</h5>

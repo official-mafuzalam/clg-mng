@@ -37,7 +37,7 @@
                         <td>{{ $result->subject }}</td>
                         <td>{{ $result->marks }}</td>
                         <td class="noPrint">
-                            <a class="btn btn-primary btn-sm" href="{{ route('result.edit', ['id' => $result->id]) }}"
+                            <a class="btn btn-primary btn-sm" href="{{ route('administration_result.edit', ['id' => $result->id]) }}"
                                 role="button"data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                                 <i class="bi-pencil-square"></i>
                             </a>

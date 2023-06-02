@@ -60,11 +60,11 @@
                     <td>{{ $notice->title }}</td>
                     <td>{{ $notice->description }}</td>
                     <td>
-                        <a class="btn btn-danger btn-sm" href="{{ route('notice.delete', ['id' => $notice->id]) }}"
+                        <a class="btn btn-danger btn-sm" href="{{ route('administration_notice.delete', ['id' => $notice->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Permanent Delete">
                             <i class="bi bi-trash"></i>
                         </a>
-                        <a class="btn btn-primary btn-sm" href="{{ route('notice.recycle', ['id' => $notice->id]) }}"
+                        <a class="btn btn-primary btn-sm" href="{{ route('administration_notice.recycle', ['id' => $notice->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                             <i class="bi-recycle"></i>
                         </a>

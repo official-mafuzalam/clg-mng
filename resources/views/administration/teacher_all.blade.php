@@ -25,7 +25,7 @@
     <a class="text-decoration-none" href="{{ url('/') }}">
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
-    <a class="text-decoration-none" href="{{ route('teacher.all') }}">
+    <a class="text-decoration-none" href="{{ route('administration_teacher.all') }}">
         <p class="fs-4">All Teacher List</p>
     </a>
 </div>
@@ -79,11 +79,11 @@
                     <td>{{ $teacher->mobile_number }}</td>
                     <td>{{ $teacher->email }}</td>
                     <td>
-                        <a class="btn btn-warning btn-sm" href="{{ route('teacher.trash', ['id' => $teacher->id]) }}"
+                        <a class="btn btn-warning btn-sm" href="{{ route('administration_teacher.trash', ['id' => $teacher->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Move to Trash">
                             <i class="bi bi-trash"></i>
                         </a>
-                        <a class="btn btn-primary btn-sm" href="{{ route('teacher.edit', ['id' => $teacher->id]) }}"
+                        <a class="btn btn-primary btn-sm" href="{{ route('administration_teacher.edit', ['id' => $teacher->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                             <i class="bi-pencil-square"></i>
                         </a>

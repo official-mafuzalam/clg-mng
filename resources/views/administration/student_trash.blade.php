@@ -62,11 +62,11 @@
                     <td>{{ $student->mobile_number }}</td>
                     <td>{{ $student->email }}</td>
                     <td>
-                        <a class="btn btn-danger btn-sm" href="{{ route('student.delete', ['id' => $student->id]) }}"
+                        <a class="btn btn-danger btn-sm" href="{{ route('administration_student.delete', ['id' => $student->id]) }}"
                             role="button"data-bs-toggle="tooltip" data-bs-placement="top" title="Parmanent Delete">
                             <i class="bi bi-trash-fill"></i>
                         </a>
-                        <a class="btn btn-primary btn-sm" href="{{ route('student.restore', ['id' => $student->id]) }}"
+                        <a class="btn btn-primary btn-sm" href="{{ route('administration_student.restore', ['id' => $student->id]) }}"
                             role="button"data-bs-toggle="tooltip" data-bs-placement="top" title="Restore">
                             <i class="bi bi-recycle"></i>
                         </a>

@@ -25,7 +25,7 @@
     <a class="text-decoration-none" href="{{ url('/') }}">
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
-    <a class="text-decoration-none" href="{{ route('notice.all') }}">
+    <a class="text-decoration-none" href="{{ route('administration_notice.all') }}">
         <p class="fs-4">All Notice List</p>
     </a>
 </div>
@@ -62,11 +62,11 @@
                     <td>{{ $notice->title }}</td>
                     <td>{{ $notice->description }}</td>
                     <td>
-                        <a class="btn btn-danger btn-sm" href="{{ route('notice.archive', ['id' => $notice->id]) }}"
+                        <a class="btn btn-danger btn-sm" href="{{ route('administration_notice.archive', ['id' => $notice->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Move to Archive">
                             <i class="bi bi-archive-fill"></i>
                         </a>
-                        <a class="btn btn-primary btn-sm" href="{{ route('notice.edit', ['id' => $notice->id]) }}"
+                        <a class="btn btn-primary btn-sm" href="{{ route('administration_notice.edit', ['id' => $notice->id]) }}"
                             role="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                             <i class="bi-pencil-square"></i>
                         </a>

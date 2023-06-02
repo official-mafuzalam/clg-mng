@@ -25,7 +25,7 @@
     <a class="text-decoration-none" href="{{ url('/') }}">
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
-    <a class="text-decoration-none" href="{{ route('deposit.findPage') }}">
+    <a class="text-decoration-none" href="{{ route('administration_deposit.findPage') }}">
         <p class="fs-4">Deposit Find</p>
     </a>
 
@@ -89,7 +89,7 @@
                     <td>{{ $deposit->deposit_challan_no }}</td>
                     <td>
                         <a class="btn btn-primary btn-sm"
-                            href="{{ route('deposit.print', ['id' => $deposit->deposit_challan_no]) }}" role="button"
+                            href="{{ route('administration_deposit.print', ['id' => $deposit->deposit_challan_no]) }}" role="button"
                             data-bs-toggle="tooltip" data-bs-placement="top" title="Print">
                             <i class="bi bi-printer"></i>
                         </a>

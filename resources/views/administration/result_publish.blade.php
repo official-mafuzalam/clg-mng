@@ -4,7 +4,7 @@
     <a class="text-decoration-none" href="{{ url('/') }}">
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
-    <a class="text-decoration-none" href="{{ route('result.publishPage') }}">
+    <a class="text-decoration-none" href="{{ route('administration_result.publishPage') }}">
         <p class="fs-4">Select Subject for Publish Result</p>
     </a>
 

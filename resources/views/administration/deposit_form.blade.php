@@ -25,7 +25,7 @@
     <a class="text-decoration-none" href="{{ url('/') }}">
         <h2 class="fw-bold">Best Polytechnic Institute</h2>
     </a>
-    <a class="text-decoration-none" href="{{ route('course.allPage') }}">
+    <a class="text-decoration-none" href="{{ route('administration_course.allPage') }}">
         <p class="fs-4">Deposit Find</p>
     </a>
 
@@ -33,7 +33,7 @@
 
 
 <div class="container text-center">
-    <form class="row g-3 d-flex" action="{{ route('deposit.confirm') }}" method="POST">
+    <form class="row g-3 d-flex" action="{{ route('administration_deposit.confirm') }}" method="POST">
         @csrf
         <p class="fs-5">Student Details</p>
         <div class="col-md-4">

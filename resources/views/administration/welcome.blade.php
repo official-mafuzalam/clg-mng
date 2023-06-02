@@ -162,7 +162,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-danger bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('semester.update') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_semester.update') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-pencil-square"></i>
                                     <h5 class="card-title">Update Semester</h5>
@@ -198,7 +198,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-warning bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('teacher.addPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_teacher.addPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-person-fill-add"></i>
                                     <h5 class="card-title">Add Teacher</h5>
@@ -208,7 +208,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-primary bg-opacity-50">
-                            <a class="text-decoration-none" href="{{ route('teacher.all') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_teacher.all') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-people"></i>
                                     <h5 class="card-title">All Teacher</h5>
@@ -218,7 +218,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('teacher.trashPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_teacher.trashPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-trash"></i>
                                     <h5 class="card-title">Trasehd Teacher</h5>
@@ -244,7 +244,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-primary bg-opacity-50">
-                            <a class="text-decoration-none" href="{{ route('notice.addPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_notice.addPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-plus-circle-fill"></i>
                                     <h5 class="card-title">Add Notice</h5>
@@ -254,7 +254,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('notice.all') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_notice.all') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-table"></i>
                                     <h5 class="card-title">All Notice</h5>
@@ -264,7 +264,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-warning bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('notice.archivePage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_notice.archivePage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-table"></i>
                                     <h5 class="card-title">Archived Notice</h5>
@@ -290,7 +290,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-warning bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('result.publishPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_result.publishPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-pencil-square"></i>
                                     <h5 class="card-title">Result Publish</h5>
@@ -300,7 +300,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('result.checkPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_result.checkPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-bar-chart-line-fill"></i>
                                     <h5 class="card-title">Result Check</h5>
@@ -326,7 +326,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-warning bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('deposit.findPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_deposit.findPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-currency-dollar"></i>
                                     <h5 class="card-title">Fees Deposit</h5>
@@ -336,7 +336,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('deposit.quarry') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_deposit.quarry') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-currency-dollar"></i>
                                     <h5 class="card-title">Daily Deposit query</h5>
@@ -375,7 +375,7 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-3">
                         <div class="card text-center bg-primary bg-opacity-50">
-                            <a class="text-decoration-none" href="{{ route('course.addPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_course.addPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-plus-circle-fill"></i>
                                     <h5 class="card-title">Add Course</h5>
@@ -385,7 +385,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="card text-center bg-info bg-opacity-75">
-                            <a class="text-decoration-none" href="{{ route('course.allPage') }}">
+                            <a class="text-decoration-none" href="{{ route('administration_course.allPage') }}">
                                 <div class="card-body text-black">
                                     <i class="fs-4 bi-book"></i>
                                     <h5 class="card-title">Courses List</h5>

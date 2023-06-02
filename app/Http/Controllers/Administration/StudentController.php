@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Administration;
 
+use App\Http\Controllers\Controller;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
+
 
 class StudentController extends Controller
 {
@@ -16,16 +18,12 @@ class StudentController extends Controller
 
     public function StudentAddPage()
     {
-        $sessionData = session()->all();
-        $userType = $sessionData['user']['type'];
-
-
 
         $student_data = new Student;
 
         $title = "Add Student details";
         $url = url('administration/student_add');
-        $data = compact('student_data', 'url', 'title', 'userType');
+        $data = compact('student_data', 'url', 'title');
 
         return view('administration.student_add')->with($data);
 
@@ -98,7 +96,7 @@ class StudentController extends Controller
         }
 
         $data = compact('students');
-        return view('administration/student_all')->with($data);
+        return view('administration.student_all')->with($data);
 
     }
 
@@ -117,7 +115,7 @@ class StudentController extends Controller
             $url = url('administration/student_update') . "/" . $id;
             $data = compact('student_data', 'url', 'title');
 
-            return view('administration/student_add')->with($data);
+            return view('administration.student_add')->with($data);
 
         }
 
@@ -175,7 +173,7 @@ class StudentController extends Controller
             'search_semester' => $search_semester,
         ];
 
-        return view('administration/semester_update')->with($data);
+        return view('administration.semester_update')->with($data);
 
 
 
@@ -204,7 +202,7 @@ class StudentController extends Controller
         $data = compact('students');
         // Show success notification
         session()->flash('success', 'Semester updated successfully.');
-        return view('administration/semester_update')->with($data);
+        return view('administration.semester_update')->with($data);
 
 
     }
@@ -229,7 +227,7 @@ class StudentController extends Controller
 
         $data = compact('students');
 
-        return view('administration/student_trash')->with($data);
+        return view('administration.student_trash')->with($data);
 
     }
 
