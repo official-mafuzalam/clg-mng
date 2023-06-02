@@ -216,7 +216,7 @@ class StudentController extends Controller
 
             // Show success notification
             session()->flash('success-trash', 'Student move to Trash successfully.');
-            return redirect('administration/student_all');
+            return redirect()->back();
         }
     }
 
@@ -240,7 +240,7 @@ class StudentController extends Controller
 
             // Show success notification
             session()->flash('success-delete', 'Student permanently deleted successfully.');
-            return redirect('administration/student_trash');
+            return redirect()->back();
         }
     }
 
@@ -253,7 +253,7 @@ class StudentController extends Controller
 
             // Show success notification
             session()->flash('success', 'Student restore successfully.');
-            return redirect('administration/student_trash');
+            return redirect()->back();
         }
     }
 

@@ -20,7 +20,7 @@ class CourseController extends Controller
         $url = url('administration/course_add');
         $data = compact('course_data', 'url', 'title');
 
-        return view('administration/course_add')->with($data);
+        return view('administration.course_add')->with($data);
 
     }
 
@@ -58,7 +58,7 @@ class CourseController extends Controller
         }
 
         $data = compact('courses');
-        return view('administration/course_all')->with($data);
+        return view('administration.course_all')->with($data);
 
     }
 
@@ -77,7 +77,7 @@ class CourseController extends Controller
             $url = url('administration/course_update') . "/" . $id;
             $data = compact('course_data', 'url', 'title');
 
-            return view('administration/course_add')->with($data);
+            return view('administration.course_add')->with($data);
 
         }
 

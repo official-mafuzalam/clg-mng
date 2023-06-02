@@ -32,7 +32,7 @@ class ResultController extends Controller
             'search_semester' => $search_semester,
         ];
 
-        return view('administration/result_publish')->with($data);
+        return view('administration.result_publish')->with($data);
 
     }
 
@@ -59,7 +59,7 @@ class ResultController extends Controller
             'search_subject' => $search_subject,
         ];
 
-        return view('administration/result_process')->with($data);
+        return view('administration.result_process')->with($data);
 
     }
 
@@ -110,7 +110,7 @@ class ResultController extends Controller
             'search_semester' => $search_semester,
         ];
 
-        return view('administration/result_check')->with($data);
+        return view('administration.result_check')->with($data);
 
     }
 
@@ -139,7 +139,7 @@ class ResultController extends Controller
             'search_subject' => $search_subject,
         ];
 
-        return view('administration/result_checked')->with($data);
+        return view('administration.result_checked')->with($data);
 
     }
 
@@ -158,7 +158,7 @@ class ResultController extends Controller
             $url = url('administration/result_update') . "/" . $id;
             $data = compact('result_data', 'url', 'title');
 
-            return view('administration/result_update')->with($data);
+            return view('administration.result_update')->with($data);
 
         }
 
@@ -177,7 +177,7 @@ class ResultController extends Controller
             // Show success notification
             session()->flash('success', 'Result updated successfully.');
 
-            return redirect()->route('result.checkPage');
+            return redirect()->route('administration_result.checkPage');
         }
     }
 

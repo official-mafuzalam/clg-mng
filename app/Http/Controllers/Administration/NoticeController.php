@@ -13,14 +13,13 @@ class NoticeController extends Controller
     public function NoticeAddPage()
     {
 
-
         $notice_data = new Notice;
 
         $title = "Add New Notice";
         $url = url('administration/notice_add');
         $data = compact('notice_data', 'url', 'title');
 
-        return view('administration/notice_add')->with($data);
+        return view('administration.notice_add')->with($data);
 
     }
 
@@ -45,7 +44,7 @@ class NoticeController extends Controller
         $notices = Notice::where('status', 1)->get();
 
         $data = compact('notices');
-        return view('administration/notice_all')->with($data);
+        return view('administration.notice_all')->with($data);
 
     }
 
@@ -64,7 +63,7 @@ class NoticeController extends Controller
             $url = url('administration/notice_update') . "/" . $id;
             $data = compact('notice_data', 'url', 'title');
 
-            return view('administration/notice_add')->with($data);
+            return view('administration.notice_add')->with($data);
 
         }
 
@@ -96,7 +95,7 @@ class NoticeController extends Controller
         $notices = Notice::where('status', 0)->get();
 
         $data = compact('notices');
-        return view('administration/notice_archive')->with($data);
+        return view('administration.notice_archive')->with($data);
 
     }
 
@@ -131,7 +130,7 @@ class NoticeController extends Controller
             $notice->save();
 
             session()->flash('success', 'Notice Active successfully.');
-            return redirect('administration/notice_archive');
+            return redirect()->back();
         }
 
     }
@@ -145,11 +144,10 @@ class NoticeController extends Controller
             return redirect('administration/notice_archive');
         } else {
 
-
             $notice->delete();
 
             session()->flash('success-delete', 'Notice delete permanently successfully.');
-            return redirect('administration/notice_archive');
+            return redirect()->back();
         }
 
     }

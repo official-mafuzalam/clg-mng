@@ -37,7 +37,7 @@ class DepositController extends Controller
         }
 
         $data = compact('deposits', 'students');
-        return view('administration/depositor_find')->with($data);
+        return view('administration.depositor_find')->with($data);
 
     }
 
@@ -56,7 +56,7 @@ class DepositController extends Controller
             $url = url('administration/student_update') . "/" . $id;
             $data = compact('student_data', 'url', 'title');
 
-            return view('administration/deposit_form')->with($data);
+            return view('administration.deposit_form')->with($data);
 
         }
 
@@ -121,7 +121,7 @@ class DepositController extends Controller
         $deposit_data = Deposits::where('deposit_challan_no', $id)->get();
         $data = compact('deposit_data');
 
-        return view('administration/deposit_print')->with($data);
+        return view('administration.deposit_print')->with($data);
 
     }
 
@@ -142,7 +142,7 @@ class DepositController extends Controller
 
         $data = compact('deposits');
 
-        return view('administration/deposit_quarry')->with($data);
+        return view('administration.deposit_quarry')->with($data);
 
     }
 

@@ -20,7 +20,7 @@ class TeacherController extends Controller
         $url = url('administration/teacher_add');
         $data = compact('teacher_data', 'url', 'title');
 
-        return view('administration/teacher_add')->with($data);
+        return view('administration.teacher_add')->with($data);
     }
 
     public function TeacherAdd(Request $request)
@@ -92,7 +92,7 @@ class TeacherController extends Controller
         }
 
         $data = compact('teachers');
-        return view('administration/teacher_all')->with($data);
+        return view('administration.teacher_all')->with($data);
 
     }
 
@@ -103,7 +103,7 @@ class TeacherController extends Controller
 
         if (is_null($teacher_data)) {
 
-            return redirect('administration/teacher_all');
+            return redirect()->back();
 
         } else {
 
@@ -111,7 +111,7 @@ class TeacherController extends Controller
             $url = url('administration/teacher_update') . "/" . $id;
             $data = compact('teacher_data', 'url', 'title');
 
-            return view('administration/teacher_add')->with($data);
+            return view('administration.teacher_add')->with($data);
 
         }
 
@@ -123,7 +123,7 @@ class TeacherController extends Controller
         $teacher = Teachers::find($id);
 
         if (is_null($teacher)) {
-            return redirect('administration/teacher_all');
+            return redirect()->back();
         } else {
 
             $teacher->w_type = "1";
@@ -152,7 +152,7 @@ class TeacherController extends Controller
             $user->delete();
 
             session()->flash('success-trash', 'Teacher move to Trash successfully.');
-            return redirect('administration/teacher_all');
+            return redirect()->back();
         }
     }
 
@@ -163,7 +163,7 @@ class TeacherController extends Controller
 
         $data = compact('teachers');
 
-        return view('administration/teacher_trash')->with($data);
+        return view('administration.teacher_trash')->with($data);
 
     }
 
@@ -175,7 +175,7 @@ class TeacherController extends Controller
             $user->forceDelete();
 
             session()->flash('success-delete', 'Teacher permanently deleted successfully.');
-            return redirect('administration/teacher_trash');
+            return redirect()->back();
         }
     }
 
@@ -187,7 +187,7 @@ class TeacherController extends Controller
             $user->restore();
 
             session()->flash('success', 'Teacher restore successfully.');
-            return redirect('administration/teacher_trash');
+           return redirect()->back();
         }
     }
 
