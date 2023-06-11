@@ -111,7 +111,7 @@ class DepositController extends Controller
                 ->subject('Deposit Confirmation');
         });
 
-        return redirect()->route('deposit.print', ['id' => $random_num]);
+        return redirect()->route('administration_deposit.print', ['id' => $random_num]);
 
     }
 
