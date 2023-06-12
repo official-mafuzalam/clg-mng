@@ -42,12 +42,35 @@ class StudentController extends Controller
         $student->technology = $request['technology'];
         $student->admission_year = $request['admission_year'];
         $student->current_semester = $request['current_semester'];
-        $student->user_name = $request['user_name'];
-        $student->gender = $request['gender'];
         $student->clg_id = $request['clg_id'];
         $student->roll_no = $request['roll_no'];
-        $student->mobile_number = $request['mobile_number'];
-        $student->email = $request['email'];
+        $student->reg_no = $request['reg_no'];
+        $student->student_name = $request['student_name'];
+        $student->student_nid = $request['student_nid'];
+        $student->student_email = $request['student_email'];
+        $student->student_mobile = $request['student_mobile'];
+        $student->father_name = $request['father_name'];
+        $student->father_nid = $request['father_nid'];
+        $student->father_mobile = $request['father_mobile'];
+        $student->mother_name = $request['mother_name'];
+        $student->mother_nid = $request['mother_nid'];
+        $student->mother_mobile = $request['mother_mobile'];
+        $student->student_gender = $request['student_gender'];
+        $student->address_street = $request['address_street'];
+        $student->address_postOffice = $request['address_postOffice'];
+        $student->address_upazila = $request['address_upazila'];
+        $student->address_zila = $request['address_zila'];
+        $student->ssc_board = $request['ssc_board'];
+        $student->ssc_group = $request['ssc_group'];
+        $student->ssc_roll = $request['ssc_roll'];
+        $student->ssc_reg = $request['ssc_reg'];
+        $student->ssc_result = $request['ssc_result'];
+        $student->hsc_board = $request['hsc_board'];
+        $student->hsc_group = $request['hsc_group'];
+        $student->hsc_roll = $request['hsc_roll'];
+        $student->hsc_reg = $request['hsc_reg'];
+        $student->hsc_result = $request['hsc_result'];
+        $student->password = $request['password'];
         $student->inserter_id = "100001";
         $student->save();
 
@@ -56,18 +79,18 @@ class StudentController extends Controller
 
 
         // Mail to Student for confirmation
-        $email = $request['email'];
+        $email = $request['student_email'];
 
         $data = [
             'user_id' => $random_num,
-            'user_name' => $request['user_name'],
+            'user_name' => $request['student_name'],
             'technology' => $request['technology'],
             'current_semester' => $request['current_semester'],
-            'gender' => $request['gender'],
+            'gender' => $request['student_gender'],
             'clg_id' => $request['clg_id'],
             'roll_no' => $request['roll_no'],
-            'mobile_number' => $request['mobile_number'],
-            'email' => $request['email']
+            'mobile_number' => $request['student_mobile'],
+            'email' => $request['student_email']
         ];
 
         Mail::send('administration.student_add_confirmation', $data, function ($message) use ($email) {
