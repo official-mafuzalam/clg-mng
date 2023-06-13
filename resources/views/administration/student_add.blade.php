@@ -148,7 +148,7 @@
     <div class="bg-slate-300 rounded-xl shadow p-4 mb-10 sm:p-7 dark:bg-slate-800">
         <div class="mb-8">
             <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 text-center">
-                Student Add Form
+                {{$title}}
             </h2>
             <label class="inline-block text-sm font-medium dark:text-gray-400">
                 Personal Information
@@ -188,7 +188,7 @@
                     <div class="sm:flex">
                         <input name="student_name" required id="student-full-name" type="text"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg -mt-px -ml-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-l-lg sm:mt-0 sm:first:ml-0 sm:first:rounded-tr-none sm:last:rounded-bl-none sm:last:rounded-r-lg text-sm relative focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="Maria">
+                            placeholder="Maria" value="{{ $student_data->student_name }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -204,7 +204,7 @@
                     <div class="sm:flex">
                         <input name="student_nid" required id="student-nid" type="number"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="xxxx-xxxx-xxxx-xxxx">
+                            placeholder="xxxx-xxxx-xxxx-xxxx" value="{{ $student_data->student_nid }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -220,7 +220,7 @@
                 <div class="col-span-9">
                     <input name="student_email" required id="student-email" type="email"
                         class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                        placeholder="maria@site.com">
+                        placeholder="maria@site.com" value="{{ $student_data->student_email }}">
                 </div>
                 <!-- End Col -->
 
@@ -237,7 +237,7 @@
                     <div class="sm:flex">
                         <input name="student_mobile" required id="student-mobile" type="tel"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="+880xxxx-xxxxxx" value="+880">
+                            placeholder="+880xxxx-xxxxxx" value="{{ $student_data->student_mobile }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -253,9 +253,11 @@
                     <select id="student-gender" name="student_gender"
                         class="py-2 px-3 pr-9 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                         <option value="" selected>Select Gender</option>
-                        <option value="Male" {{ $student_data->gender == 'Male' ? 'selected' : '' }}>Male</option>
-                        <option value="Female" {{ $student_data->gender == 'Female' ? 'selected' : '' }}>Female</option>
-                        <option value="Others" {{ $student_data->gender == 'Others' ? 'selected' : '' }}>Others</option>
+                        <option value="Male" {{ $student_data->student_gender == 'Male' ? 'selected' : '' }}>Male</option>
+                        <option value="Female" {{ $student_data->student_gender == 'Female' ? 'selected' : '' }}>Female
+                        </option>
+                        <option value="Others" {{ $student_data->student_gender == 'Others' ? 'selected' : '' }}>Others
+                        </option>
                     </select>
                 </div>
                 <!-- End Col -->
@@ -271,7 +273,7 @@
                     <div class="sm:flex">
                         <input name="father_name" required id="father-full-name" type="text"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="Mr. Jak">
+                            placeholder="Mr. Jak" value="{{ $student_data->father_name }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -287,7 +289,7 @@
                     <div class="sm:flex">
                         <input name="father_nid" required id="father-nid" type="number"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="xxxx-xxxx-xxxx-xxxx">
+                            placeholder="xxxx-xxxx-xxxx-xxxx" value="{{ $student_data->father_nid }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -305,7 +307,7 @@
                     <div class="sm:flex">
                         <input name="father_mobile" required id="father-mobile" type="tel"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="+880xxxx-xxxxxx" value="+880">
+                            placeholder="+880xxxx-xxxxxx" value="{{ $student_data->father_mobile }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -321,7 +323,7 @@
                     <div class="sm:flex">
                         <input name="mother_name" required id="mother-full-name" type="text"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="Ms. Rose">
+                            placeholder="Ms. Rose" value="{{ $student_data->mother_name }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -337,7 +339,7 @@
                     <div class="sm:flex">
                         <input name="mother_nid" required id="mother-nid" type="number"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="xxxx-xxxx-xxxx-xxxx">
+                            placeholder="xxxx-xxxx-xxxx-xxxx" value="{{ $student_data->mother_nid }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -355,7 +357,7 @@
                     <div class="sm:flex">
                         <input name="mother_mobile" required id="mother-mobile" type="tel"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="+880xxxx-xxxxxx" value="+880">
+                            placeholder="+880xxxx-xxxxxx" value="{{ $student_data->mother_mobile }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -372,17 +374,17 @@
                     <div class="mt-2 space-y-3">
                         <input name="address_street" required id="af-payment-billing-address" type="text"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="Street Address">
+                            placeholder="Street Address" value="{{ $student_data->address_street }}">
                         <input name="address_postOffice" required type="text"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="Post office address">
+                            placeholder="Post office address" value="{{ $student_data->address_postOffice }}">
                         <div class="sm:flex gap-3">
                             <input name="address_upazila" required type="text"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                                placeholder="Upazila">
+                                placeholder="Upazila" value="{{ $student_data->address_upazila }}">
                             <input name="address_zila" required type="text"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                                placeholder="Zila">
+                                placeholder="Zila" value="{{ $student_data->address_zila }}">
                         </div>
                     </div>
                 </div>
@@ -454,13 +456,13 @@
                         <div class="sm:flex gap-3">
                             <input name="ssc_roll" required id="af-payment-billing-address" type="number"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                                placeholder="Board Roll">
+                                placeholder="Board Roll" value="{{ $student_data->ssc_roll }}">
                             <input name="ssc_reg" required type="number"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                                placeholder="Board Reg.">
+                                placeholder="Board Reg." value="{{ $student_data->ssc_reg }}">
                             <input name="ssc_result" required type="text"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                                placeholder="Result GPA">
+                                placeholder="Result GPA" value="{{ $student_data->ssc_result }}">
                         </div>
                     </div>
                 </div>
@@ -525,13 +527,13 @@
                         <div class="sm:flex gap-3">
                             <input name="hsc_roll" id="af-payment-billing-address" type="number"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                                placeholder="Board Roll">
+                                placeholder="Board Roll" value="{{ $student_data->hsc_roll }}">
                             <input name="hsc_reg" type="number"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                                placeholder="Board Reg.">
-                            <input name="hsc_result" type="number"
+                                placeholder="Board Reg." value="{{ $student_data->hsc_reg }}">
+                            <input name="hsc_result" type="text"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                                placeholder="Result GPA">
+                                placeholder="Result GPA" value="{{ $student_data->hsc_result }}">
                         </div>
                     </div>
                 </div>
@@ -661,7 +663,7 @@
                     <div class="sm:flex">
                         <input name="clg_id" required id="collage-id" type="text"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="xxx/xx">
+                            placeholder="xxx/xx" value="{{ $student_data->clg_id }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -680,7 +682,7 @@
                     <div class="sm:flex">
                         <input name="roll_no" required id="student-roll" type="number"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="xxx">
+                            placeholder="xxx" value="{{ $student_data->roll_no }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -700,7 +702,7 @@
                     <div class="sm:flex">
                         <input name="reg_no" required id="student-roll" type="number"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="xxx">
+                            placeholder="xxx" value="{{ $student_data->reg_no }}">
                     </div>
                 </div>
                 <!-- End Col -->
@@ -719,7 +721,7 @@
                     <div class="sm:flex">
                         <input name="password" id="student-password" type="text"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
-                            placeholder="xxxxxxxxxxxx">
+                            placeholder="xxxxxxxxxxxx" value="{{ $student_data->password }}">
                     </div>
                 </div>
                 <!-- End Col -->
