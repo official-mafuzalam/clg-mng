@@ -15,13 +15,21 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('w_type');
-            $table->string('user_name');
+            $table->string('teacher_name');
+            $table->string('teacher_nid');
+            $table->string('teacher_email');
+            $table->string('teacher_gender');
             $table->string('technology');
-            $table->string('mobile_number');
-            $table->string('email');
-            $table->string('position');
+            $table->string('teacher_mobile');
+            $table->string('address_street');
+            $table->string('address_postOffice');
+            $table->string('address_upazila');
+            $table->string('address_zila');
+            $table->string('password');
+            $table->string('designation');
             $table->integer('inserter_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

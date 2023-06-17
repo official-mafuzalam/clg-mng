@@ -28,44 +28,52 @@ class TeacherController extends Controller
 
         $random_num = null;
         do {
-            $random_num = rand(10000, 99999);
-        } while (DB::table('students')->where('user_id', $random_num)->exists());
+            $random_num = rand(100000, 999999);
+        } while (DB::table('teachers')->where('user_id', $random_num)->exists());
 
 
         $teacher = new Teachers;
 
         $teacher->user_id = $random_num;
         $teacher->w_type = "1";
+        $teacher->teacher_name = $request['teacher_name'];
+        $teacher->teacher_nid = $request['teacher_nid'];
+        $teacher->teacher_email = $request['teacher_email'];
+        $teacher->teacher_mobile = $request['teacher_mobile'];
+        $teacher->teacher_gender = $request['teacher_gender'];
         $teacher->technology = $request['technology'];
-        $teacher->user_name = $request['user_name'];
-        $teacher->position = $request['position'];
-        $teacher->mobile_number = $request['mobile_number'];
-        $teacher->email = $request['email'];
+        $teacher->address_street = $request['address_street'];
+        $teacher->address_postOffice = $request['address_postOffice'];
+        $teacher->address_upazila = $request['address_upazila'];
+        $teacher->address_zila = $request['address_zila'];
+        $teacher->designation = $request['designation'];
+        $teacher->password = $request['password'];
         $teacher->inserter_id = "100001";
         $teacher->save();
 
         session()->flash('success', 'New Teacher added successfully.');
 
         // Create Teacher User login
-        
+
         $user = new User;
 
         $user->user_id = $random_num;
-        $user->name = $request['user_name'];
-        $user->email = $request['email'];
+        $user->name = $request['teacher_name'];
+        $user->email = $request['teacher_email'];
         $user->password = Hash::make($request['password']);
         $user->save();
 
 
         // Mail to Student for confirmation
-        $email = $request['email'];
+        $email = $request['teacher_email'];
         $data = [
             'user_id' => $random_num,
-            'user_name' => $request['user_name'],
+            'user_name' => $request['teacher_name'],
             'technology' => $request['technology'],
-            'position' => $request['position'],
-            'mobile_number' => $request['mobile_number'],
-            'email' => $request['email']
+            'position' => $request['designation'],
+            'mobile_number' => $request['teacher_mobile'],
+            'email' => $request['teacher_email'],
+            'password' => $request['password']
         ];
 
         Mail::send('administration.teacher_add_confirmation', $data, function ($message) use ($email) {
@@ -95,6 +103,7 @@ class TeacherController extends Controller
         return view('administration.teacher_all')->with($data);
 
     }
+
 
     public function TeacherEdit($id)
     {
@@ -127,11 +136,18 @@ class TeacherController extends Controller
         } else {
 
             $teacher->w_type = "1";
+            $teacher->teacher_name = $request['teacher_name'];
+            $teacher->teacher_nid = $request['teacher_nid'];
+            $teacher->teacher_email = $request['teacher_email'];
+            $teacher->teacher_mobile = $request['teacher_mobile'];
+            $teacher->teacher_gender = $request['teacher_gender'];
             $teacher->technology = $request['technology'];
-            $teacher->user_name = $request['user_name'];
-            $teacher->position = $request['position'];
-            $teacher->mobile_number = $request['mobile_number'];
-            $teacher->email = $request['email'];
+            $teacher->address_street = $request['address_street'];
+            $teacher->address_postOffice = $request['address_postOffice'];
+            $teacher->address_upazila = $request['address_upazila'];
+            $teacher->address_zila = $request['address_zila'];
+            $teacher->designation = $request['designation'];
+            $teacher->password = $request['password'];
             $teacher->save();
 
             // Show success notification
@@ -187,7 +203,7 @@ class TeacherController extends Controller
             $user->restore();
 
             session()->flash('success', 'Teacher restore successfully.');
-           return redirect()->back();
+            return redirect()->back();
         }
     }
 

@@ -18,6 +18,7 @@
         <li>Designation: {{ $position }}</li>
         <li>Mobile Number: {{ $mobile_number }}</li>
         <li>Email: {{ $email }}</li>
+        <li>Password: {{ $password }}</li>
         <!-- Add more details here -->
     </ul>
 

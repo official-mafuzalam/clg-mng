@@ -42,7 +42,7 @@
                 <tr>
                     <td>{{ $student->id }}</td>
                     <td>{{ $student->user_id }}</td>
-                    <td>{{ $student->user_name }}</td>
+                    <td>{{ $student->student_name }}</td>
                     <td>{{ $student->technology }}</td>
                     <td>{{ $student->current_semester }}</td>
                     <td>{{ $student->clg_id }}</td>

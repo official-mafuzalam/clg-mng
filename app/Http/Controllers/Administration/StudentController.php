@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 
 class StudentController extends Controller
@@ -27,14 +28,16 @@ class StudentController extends Controller
 
         return view('administration.student_add')->with($data);
 
-
-
     }
 
     public function StudentAdd(Request $request)
     {
 
-        $random_num = rand(10000, 99999);
+        $random_num = null;
+        do {
+            $random_num = rand(10000, 99999);
+        } while (DB::table('students')->where('user_id', $random_num)->exists());
+
 
         $student = new Student;
 
