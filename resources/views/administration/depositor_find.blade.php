@@ -1,135 +1,8 @@
-{{-- <div class="container text-center">
-    <a class="text-decoration-none" href="{{ url('/') }}">
-        <h2 class="fw-bold">Best Polytechnic Institute</h2>
-    </a>
-    <a class="text-decoration-none" href="{{ route('administration_deposit.findPage') }}">
-        <p class="fs-4">Deposit Find</p>
-    </a>
-
-</div>
-
-<div class="container text-center">
-    <form class="row g-3 d-flex" role="search" action="">
-        <div class="col-md-8">
-            <div class="input-group">
-                <input type="text" class="form-control" name="id" placeholder="User Id" required>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-success mb-3">Search</button>
-        </div>
-    </form>
-</div> --}}
-{{--  --}}
-
-{{-- @if (!empty($students))
-    <h4 class="text-center">Depositor</h4>
-    <div class="table-responsive">
-        <table class="table table-sm table-striped table-hover table-bordered border-primary">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">S_No</th>
-                    <th scope="col">User ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Technologoy</th>
-                    <th scope="col">Semester</th>
-                    <th scope="col">Year</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Clg/ID</th>
-                    <th scope="col">Roll No</th>
-                    <th scope="col">Mobile No</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($students as $student)
-                    <tr class="">
-                        <td>{{ $student->id }}</td>
-                        <td>{{ $student->user_id }}</td>
-                        <td>{{ $student->user_name }}</td>
-                        <td>{{ $student->technology }}</td>
-                        <td>{{ $student->current_semester }}</td>
-                        <td>{{ $student->admission_year }}</td>
-                        <td>{{ $student->gender }}</td>
-                        <td>{{ $student->clg_id }}</td>
-                        <td>{{ $student->roll_no }}</td>
-                        <td>{{ $student->mobile_number }}</td>
-                        <td>{{ $student->email }}</td>
-                        <td>
-                            <a class="btn btn-warning btn-sm"
-                                href="{{ route('administration_deposit.form', ['id' => $student->id]) }}" role="button"
-                                data-bs-toggle="tooltip" data-bs-placement="top" title="Deposit">
-                                <i class="bi bi-arrow-right-circle-fill"></i>
-                            </a>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-
-@endif --}}
-
-
-{{--  --}}
-
-{{-- <h4 class="text-center">Deposit History</h4>
-<div class="table-responsive">
-    <table class="table table-sm table-striped table-hover table-bordered border-primary">
-        <thead class="table-dark">
-            <tr>
-                th scope="col">S_No</th>
-                <th scope="col">Date</th>
-                <th scope="col">User_id</th>
-                <th scope="col">Technologoy</th>
-                <th scope="col">Year</th>
-                <th scope="col">Semester</th>
-                <th scope="col">Name</th>
-                <th scope="col">Clg_Id</th>
-                <th scope="col">Roll</th>
-                <th scope="col">Deposit</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Comment</th>
-                <th scope="col">Challan</th>
-                <th scope="col">Action</th><
-            </tr>
-        </thead>
-        <tbody> --}}
-{{-- @foreach ($deposits as $deposit)
-                <tr class="">
-                    <td>{{ $deposit->id }}</td>
-                    <td>{{ $deposit->date }}</td>
-                    <td>{{ $deposit->user_id }}</td>
-                    <td>{{ $deposit->technology }}</td>
-                    <td>{{ $deposit->admission_year }}</td>
-                    <td>{{ $deposit->current_semester }}</td>
-                    <td>{{ $deposit->user_name }}</td>
-                    <td>{{ $deposit->clg_id }}</td>
-                    <td>{{ $deposit->roll_no }}</td>
-                    <td>{{ $deposit->deposit_amount }}</td>
-                    <td>{{ $deposit->deposit_category }}</td>
-                    <td>{{ $deposit->comment }}</td>
-                    <td>{{ $deposit->deposit_challan_no }}</td>
-                    <td>
-                        <a class="btn btn-primary btn-sm"
-                            href="{{ route('administration_deposit.print', ['id' => $deposit->deposit_challan_no]) }}" role="button"
-                            data-bs-toggle="tooltip" data-bs-placement="top" title="Print">
-                            <i class="bi bi-printer"></i>
-                        </a>
-                    </td>
-                </tr>
-            @endforeach --}}
-{{-- </tbody>
-    </table>
-</div> --}}
-
-
 @extends('layouts.body')
 
 {{-- Page Title --}}
 @section('page-title')
-    <title>Teacher All | Best Politechnic Institute</title>
+    <title>Find Depositor | Best Politechnic Institute</title>
 @endsection
 
 <!-- Breadcrumb -->
@@ -276,7 +149,7 @@
         <!-- Card -->
         <div class="flex flex-col">
             <h2 class="md:text-2xl text-xs pb-2 font-bold text-gray-800 dark:text-gray-200 text-center">
-                All Teacher's
+                Find Depositor
             </h2>
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
@@ -288,7 +161,7 @@
                                 class="px-4 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
 
                                 <input name="id" required id="student-email" type="number"
-                                    class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+                                    class="py-2 px-3 pr-11 block w-full bg-slate-600 text-slate-50 border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-500 dark:border-gray-700 dark:text-gray-100"
                                     placeholder="xxxxxx">
 
                                 <div>
@@ -353,7 +226,7 @@
                                             </span>
                                         </div>
                                     </th>
-                                    
+
                                     <th scope="col" class="px-4 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
@@ -368,7 +241,7 @@
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
-                                                Amount
+                                                Mobile
                                             </span>
                                         </div>
                                     </th>
@@ -387,12 +260,12 @@
                             </thead>
 
                             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                                @foreach ($students as $deposit)
+                                @foreach ($students as $student)
                                     <tr>
                                         <td class="h-px w-px whitespace-nowrap">
                                             <div class="pl-6 py-3">
                                                 <span class="block text-sm text-gray-500">
-                                                    {{ $deposit->user_id }}
+                                                    {{ $student->user_id }}
                                                 </span>
                                             </div>
                                         </td>
@@ -403,7 +276,7 @@
                                                     <div class="grow">
                                                         <span
                                                             class="block text-sm font-semibold text-gray-800 dark:text-gray-200">
-                                                            {{ $deposit->student_name }}
+                                                            {{ $student->student_name }}
                                                         </span>
                                                     </div>
                                                 </div>
@@ -414,7 +287,7 @@
                                             <div class="px-4 py-3">
 
                                                 <span class="block text-sm text-gray-500">
-                                                    {{ $deposit->technology }}
+                                                    {{ $student->technology }}
                                                 </span>
                                             </div>
                                         </td>
@@ -423,41 +296,41 @@
                                             <div class="px-4 py-3">
 
                                                 <span class="block text-sm text-gray-500">
-                                                    {{ $deposit->current_semester }}
+                                                    {{ $student->current_semester }}
                                                 </span>
                                             </div>
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
                                             <div class="px-4 py-3">
-                                                <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">
-                                                    {{ $deposit->user_name }}
+                                                <span class="block text-sm text-gray-500">
+                                                    {{ $student->roll_no }}
                                                 </span>
                                             </div>
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
                                             <div class="px-4 py-3">
-                                                <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">
-                                                    {{ $deposit->deposit_category }}
+                                                <span class="block text-sm text-gray-500">
+                                                    {{ $student->clg_id }}
                                                 </span>
                                             </div>
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
                                             <div class="px-4 py-3">
-                                                <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">
-                                                    {{ $deposit->deposit_amount }}
+                                                <span class="block text-sm text-gray-500">
+                                                    {{ $student->student_mobile }}
                                                 </span>
                                             </div>
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
                                             <div class="px-4 py-1.5">
-                                                {{-- <a target="blank" class="block items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium"
-                                                href="{{ route('administration_deposit.print', ['id' => $deposit->deposit_challan_no]) }}" >
-                                                    Print
-                                                </a> --}}
+                                                <a class="block items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium"
+                                                    href="{{ route('administration_deposit.form', ['id' => $student->id]) }}">
+                                                    Deposit
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
@@ -530,7 +403,7 @@
                                             </span>
                                         </div>
                                     </th>
-                                    
+
                                     <th scope="col" class="px-4 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
@@ -634,8 +507,9 @@
 
                                         <td class="h-px w-px whitespace-nowrap">
                                             <div class="px-4 py-1.5">
-                                                <a target="blank" class="block items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium"
-                                                href="{{ route('administration_deposit.print', ['id' => $deposit->deposit_challan_no]) }}" >
+                                                <a target="blank"
+                                                    class="block items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium"
+                                                    href="{{ route('administration_deposit.print', ['id' => $deposit->deposit_challan_no]) }}">
                                                     Print
                                                 </a>
                                             </div>

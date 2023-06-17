@@ -75,10 +75,10 @@ class DepositController extends Controller
         $deposit->technology = $request['technology'];
         $deposit->admission_year = $request['admission_year'];
         $deposit->current_semester = $request['current_semester'];
-        $deposit->user_name = $request['user_name'];
+        $deposit->user_name = $request['student_name'];
         $deposit->clg_id = $request['clg_id'];
         $deposit->roll_no = $request['roll_no'];
-        $deposit->mobile_number = $request['mobile_number'];
+        $deposit->mobile_number = $request['student_mobile'];
         $deposit->deposit_category = $request['deposit_category'];
         $deposit->deposit_amount = $request['deposit_amount'];
         $deposit->comment = $request['comment'];
@@ -89,17 +89,17 @@ class DepositController extends Controller
         // Show success notification
         session()->flash('success', 'Deposit completed successfully.');
 
-        $email = $request['email'];
+        $email = $request['student_email'];
 
         $data = [
             'random_num' => $random_num,
             'user_id' => $request['user_id'],
-            'user_name' => $request['user_name'],
+            'user_name' => $request['student_name'],
             'technology' => $request['technology'],
             'current_semester' => $request['current_semester'],
             'clg_id' => $request['clg_id'],
             'roll_no' => $request['roll_no'],
-            'mobile_number' => $request['mobile_number'],
+            'mobile_number' => $request['student_mobile'],
             'deposit_category' => $request['deposit_category'],
             'deposit_amount' => $request['deposit_amount'],
             'comment' => $request['comment'],
