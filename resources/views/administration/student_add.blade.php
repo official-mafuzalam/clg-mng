@@ -261,7 +261,7 @@
 
                 <div class="col-span-9">
                     <div class="mt-2 space-y-3">
-                        <input name="address_street" required id="af-payment-billing-address" type="text"
+                        <input name="address_street" required type="text"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                             placeholder="Street Address" value="{{ $student_data->address_street }}">
                         <input name="address_postOffice" required type="text"
@@ -297,7 +297,7 @@
                 <div class="col-span-9">
                     <div class="mt-2 space-y-3">
                         <div class="sm:flex gap-3">
-                            <select id="pre-board" name="ssc_board"
+                            <select  name="ssc_board"
                                 class="py-2 px-3 pr-9 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                                 <option value="" selected>Select Board</option>
                                 <option value="Dhaka" {{ $student_data->ssc_board == 'Dhaka' ? 'selected' : '' }}>Dhaka
@@ -329,7 +329,7 @@
                                     Technical
                                 </option>
                             </select>
-                            <select id="pre-group" name="ssc_group"
+                            <select name="ssc_group"
                                 class="py-2 px-3 pr-9 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                                 <option value="" selected>Select Group</option>
                                 <option value="Science" {{ $student_data->ssc_group == 'Science' ? 'selected' : '' }}>
@@ -343,7 +343,7 @@
                             </select>
                         </div>
                         <div class="sm:flex gap-3">
-                            <input name="ssc_roll" required id="af-payment-billing-address" type="number"
+                            <input name="ssc_roll" required type="number"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                 placeholder="Board Roll" value="{{ $student_data->ssc_roll }}">
                             <input name="ssc_reg" required type="number"
@@ -414,7 +414,7 @@
                             </select>
                         </div>
                         <div class="sm:flex gap-3">
-                            <input name="hsc_roll" id="af-payment-billing-address" type="number"
+                            <input name="hsc_roll" type="number"
                                 class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                                 placeholder="Board Roll" value="{{ $student_data->hsc_roll }}">
                             <input name="hsc_reg" type="number"
@@ -437,7 +437,7 @@
 
                 <div class="col-span-3">
                     <div class="inline-block">
-                        <label for="student-class" class="inline-block text-sm text-gray-800 mt-2.5 dark:text-gray-200">
+                        <label class="inline-block text-sm text-gray-800 mt-2.5 dark:text-gray-200">
                             Technology
                         </label>
                     </div>
@@ -445,7 +445,7 @@
                 <!-- End Col -->
 
                 <div class="col-span-9">
-                    <select id="student-class" name="technology"
+                    <select name="technology"
                         class="py-2 px-3 pr-9 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                         <option value="" selected>Select a Technology</option>
                         <option value="Computer" {{ $student_data->technology == 'Computer' ? 'selected' : '' }}>Computer
@@ -474,7 +474,7 @@
 
                 <div class="col-span-3">
                     <div class="inline-block">
-                        <label for="student-class" class="inline-block text-sm text-gray-800 mt-2.5 dark:text-gray-200">
+                        <label class="inline-block text-sm text-gray-800 mt-2.5 dark:text-gray-200">
                             Session
                         </label>
                     </div>
@@ -482,7 +482,7 @@
                 <!-- End Col -->
 
                 <div class="col-span-9">
-                    <select id="student-class" name="admission_year"
+                    <select name="admission_year"
                         class="py-2 px-3 pr-9 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                         <option value="" selected>Select Seasons</option>
                         <option value="18-19" {{ $student_data->admission_year == '18-19' ? 'selected' : '' }}>18-19
@@ -589,7 +589,7 @@
                 <!-- End Col -->
                 <div class="col-span-9">
                     <div class="sm:flex">
-                        <input name="reg_no" required id="student-roll" type="number"
+                        <input name="reg_no" required id="student-reg" type="number"
                             class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                             placeholder="xxx" value="{{ $student_data->reg_no }}">
                     </div>

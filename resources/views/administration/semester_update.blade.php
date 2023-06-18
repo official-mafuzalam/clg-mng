@@ -159,7 +159,7 @@
 
 {{-- Page Title --}}
 @section('page-title')
-    <title>Student All | Best Politechnic Institute</title>
+    <title>Update Semester | Best Politechnic Institute</title>
 @endsection
 
 <!-- Breadcrumb -->
@@ -184,7 +184,7 @@
                     d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                     clip-rule="evenodd"></path>
             </svg>
-            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">All Student</span>
+            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Semester Update</span>
         </div>
     </li>
 @endsection
@@ -306,7 +306,7 @@
         <!-- Card -->
         <div class="flex flex-col">
             <h2 class="md:text-2xl text-xs pb-2 font-bold text-gray-800 dark:text-gray-200 text-center">
-                All Student's
+                Update Semester
             </h2>
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
