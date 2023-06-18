@@ -8,153 +8,10 @@
     @vite('resources/js/app.js')
     @yield('page-title')
 
-    {{-- <style>
-        .scrollable-left {
-            overflow-x: scroll;
-        }
-
-        .scrollable-right {
-            overflow-x: scroll;
-        }
-
-        @media (max-width: 767px) {
-            .offcanvas {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 80%;
-                max-width: 320px;
-                height: 100vh;
-                transition: left 0.3s ease-in-out;
-                z-index: 9999;
-            }
-
-            .offcanvas.open {
-                left: 0;
-            }
-
-            .scrollable-right {
-                width: 100%;
-            }
-        }
-    </style> --}}
-
-</head>
-
-
-
-{{-- <body>
-
-
-
-
-
-
-
-
-
-    <div class="flex h-screen">
-        <!-- Offcanvas -->
-        <div id="offcanvas" class="offcanvas bg-slate-900 scrollable-left w-1/5 md:w-1/5">
-            <!-- Offcanvas toggle button -->
-            <button class="fixed top-4 left-4 md:hidden" onclick="toggleOffcanvas()">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    class="h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
-                </svg>
-            </button>
-            <!-- Left side content -->
-            <div class="w-full h-full p-10">
-                <!-- Left side scrollable content -->
-                <div class="flex flex-col">
-                    <ul>
-                        <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-semibold text-sky-500 dark:text-sky-400"
-                                href="/docs/installation">
-                                Documentation
-                            </a></li>
-                        <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-medium text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="https://tailwindui.com/components?ref=sidebar">
-                                Components
-                            </a></li>
-                        <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-medium text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="https://tailwindui.com/templates?ref=sidebar">
-                                Templates
-                            </a></li>
-                        <li><a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-medium text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="https://www.youtube.com/tailwindlabs">
-                                Screencasts
-                            </a></li>
-                        <li>
-                            <a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-medium text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="https://play.tailwindcss.com">
-                                Playground
-                            </a>
-                        </li>
-                        <li>
-                            <a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-medium text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="/resources">
-                                <span class="">Resources</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="group flex items-center lg:text-sm lg:leading-6 mb-4 font-medium text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="https://github.com/tailwindlabs/tailwindcss/discussions">
-                                <span class="">Community</span>
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="w-full md:w-4/5 bg-gray-700 scrollable-right p-4">
-            <!-- Right side content -->
-            <div class="w-full h-fit bg-white rounded-lg p-4 mb-4">
-                <!-- Right side scrollable content -->
-                <h3 class="text-center">Best High School</h3>
-            </div>
-
-            <div class="w-full h-fit bg-white rounded-lg p-4 mb-4">
-                <!-- Right side scrollable content -->
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae porro fuga in? Ducimus doloribus
-                accusamus non odit nihil quia ab!
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-    <script>
-        function toggleOffcanvas() {
-            const offcanvas = document.getElementById('offcanvas');
-            offcanvas.classList.toggle('open');
-        }
-    </script>
-
-
-    <script>
-        // document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-        //     document.getElementById('mobile-menu').classList.toggle('hidden');
-        // });
-    </script>
-
-
-
-</body> --}}
-
-
 <body class="bg-gray-50 dark:bg-slate-900">
     <!-- ========== HEADER ========== -->
     <header
-        class="sticky top-0 inset-x-0 flex flex-wrap sm:justify-start sm:flex-nowrap z-[48] w-full bg-white border-b text-sm py-2.5 sm:py-4 lg:pl-64 dark:bg-gray-800 dark:border-gray-700">
+        class="noPrint sticky top-0 inset-x-0 flex flex-wrap sm:justify-start sm:flex-nowrap z-[48] w-full bg-white border-b text-sm py-2.5 sm:py-4 lg:pl-64 dark:bg-gray-800 dark:border-gray-700">
         <nav class="flex basis-full items-center w-full mx-auto px-4 sm:px-6 md:px-8" aria-label="Global">
             <div class="mr-5 lg:mr-0 lg:hidden">
                 <a class="flex-none text-xl font-semibold dark:text-white" href="#" aria-label="Brand">Brand</a>
@@ -172,7 +29,7 @@
                     </button>
                 </div>
 
-                <div class="hidden sm:block">
+                <div class="hidden sm:block border-gray-200 shadow-lg  dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
                     <label for="icon" class="sr-only">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 flex items-center pointer-events-none z-20 pl-4">

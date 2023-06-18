@@ -158,7 +158,7 @@
                         <!-- Header -->
                         <form role="search" action="">
                             <div
-                                class="px-4 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
+                                class="px-2 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200 dark:border-gray-700">
 
                                 <input name="id" required id="student-email" type="number"
                                     class="py-2 px-3 pr-11 block w-full bg-slate-600 text-slate-50 border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-500 dark:border-gray-700 dark:text-gray-100"
@@ -200,7 +200,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -209,7 +209,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -218,7 +218,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -227,7 +227,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -237,7 +237,7 @@
                                     </th>
 
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -247,7 +247,7 @@
                                     </th>
 
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -284,7 +284,7 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
+                                            <div class="px-2 py-3">
 
                                                 <span class="block text-sm text-gray-500">
                                                     {{ $student->technology }}
@@ -293,7 +293,7 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
+                                            <div class="px-2 py-3">
 
                                                 <span class="block text-sm text-gray-500">
                                                     {{ $student->current_semester }}
@@ -302,7 +302,7 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
+                                            <div class="px-2 py-3">
                                                 <span class="block text-sm text-gray-500">
                                                     {{ $student->roll_no }}
                                                 </span>
@@ -310,7 +310,7 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
+                                            <div class="px-2 py-3">
                                                 <span class="block text-sm text-gray-500">
                                                     {{ $student->clg_id }}
                                                 </span>
@@ -318,7 +318,7 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
+                                            <div class="px-2 py-3">
                                                 <span class="block text-sm text-gray-500">
                                                     {{ $student->student_mobile }}
                                                 </span>
@@ -326,7 +326,7 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-1.5">
+                                            <div class="px-2 py-1.5">
                                                 <a class="block items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium"
                                                     href="{{ route('administration_deposit.form', ['id' => $student->id]) }}">
                                                     Deposit
@@ -344,20 +344,6 @@
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                             <thead class="bg-gray-300 dark:bg-slate-800">
                                 <tr>
-
-                                    {{-- <th scope="col">Date</th>
-                                    <th scope="col">User_id</th>
-                                    <th scope="col">Technologoy</th>
-                                    <th scope="col">Year</th>
-                                    <th scope="col">Semester</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Clg_Id</th>
-                                    <th scope="col">Roll</th>
-                                    <th scope="col">Deposit</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Comment</th>
-                                    <th scope="col">Challan</th>
-                                    <th scope="col">Action</th> --}}
 
                                     <th scope="col" class="pl-6 py-3 text-left">
                                         <label class="flex">
@@ -377,7 +363,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -386,7 +372,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -395,7 +381,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -404,7 +390,16 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
+                                        <div class="flex items-center gap-x-2">
+                                            <span
+                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                Roll
+                                            </span>
+                                        </div>
+                                    </th>
+
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -414,7 +409,7 @@
                                     </th>
 
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -424,7 +419,17 @@
                                     </th>
 
 
-                                    <th scope="col" class="px-4 py-3 text-left">
+                                    <th scope="col" class="px-2 py-3 text-left">
+                                        <div class="flex items-center gap-x-2">
+                                            <span
+                                                class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
+                                                Comment
+                                            </span>
+                                        </div>
+                                    </th>
+
+
+                                    <th scope="col" class="px-2 py-3 text-left">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-gray-200">
@@ -464,7 +469,7 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
+                                            <div class="px-2 py-3">
 
                                                 <span class="block text-sm text-gray-500">
                                                     {{ $deposit->technology }}
@@ -473,7 +478,7 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
+                                            <div class="px-2 py-3">
 
                                                 <span class="block text-sm text-gray-500">
                                                     {{ $deposit->current_semester }}
@@ -482,7 +487,7 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
+                                            <div class="px-2 py-3">
                                                 <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">
                                                     {{ $deposit->user_name }}
                                                 </span>
@@ -490,7 +495,15 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
+                                            <div class="px-2 py-3">
+                                                <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">
+                                                    {{ $deposit->roll_no }}
+                                                </span>
+                                            </div>
+                                        </td>
+
+                                        <td class="h-px w-px whitespace-nowrap">
+                                            <div class="px-2 py-3">
                                                 <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">
                                                     {{ $deposit->deposit_category }}
                                                 </span>
@@ -498,15 +511,24 @@
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-3">
-                                                <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">
+                                            <div class="px-2 py-3">
+                                                <span
+                                                    class="deposit-amount block text-sm font-semibold text-gray-800 dark:text-gray-200">
                                                     {{ $deposit->deposit_amount }}
                                                 </span>
                                             </div>
                                         </td>
 
                                         <td class="h-px w-px whitespace-nowrap">
-                                            <div class="px-4 py-1.5">
+                                            <div class="px-2 py-3">
+                                                <span class="block text-sm font-semibold text-gray-800 dark:text-gray-200">
+                                                    {{ $deposit->comment }}
+                                                </span>
+                                            </div>
+                                        </td>
+
+                                        <td class="h-px w-px whitespace-nowrap">
+                                            <div class="px-2 py-1.5">
                                                 <a target="blank"
                                                     class="block items-center gap-x-1.5 text-sm text-blue-600 decoration-2 hover:underline font-medium"
                                                     href="{{ route('administration_deposit.print', ['id' => $deposit->deposit_challan_no]) }}">
@@ -521,7 +543,7 @@
                         <!-- End Table -->
 
                         <!-- Footer -->
-                        <div class="px-4 py-4 border-t border-gray-200 dark:border-gray-700">
+                        <div class="px-2 py-4 border-t border-gray-200 dark:border-gray-700">
                             <div class="inline-flex gap-x-2">
                                 {{ $deposits->links() }}
                             </div>
