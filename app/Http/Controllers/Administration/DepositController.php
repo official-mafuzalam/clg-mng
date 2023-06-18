@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\Deposits;
 use App\Models\Student;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DepositController extends Controller
 {
@@ -65,8 +67,14 @@ class DepositController extends Controller
 
     public function DepositConfirm(Request $request)
     {
+        $user = session('user');
+        $inserter_id = $user['user_id'];
 
-        $random_num = rand(10000000, 99999999);
+        $random_num = null;
+        do {
+            $random_num = rand(10000000, 99999999);
+        } while (DB::table('deposits')->where('deposit_challan_no', $random_num)->exists());
+
 
         $deposit = new Deposits;
 
@@ -83,7 +91,7 @@ class DepositController extends Controller
         $deposit->deposit_amount = $request['deposit_amount'];
         $deposit->comment = $request['comment'];
         $deposit->deposit_challan_no = $random_num;
-        $deposit->inserter_id = "100000";
+        $deposit->inserter_id = $inserter_id;
         $deposit->save();
 
         // Show success notification

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('semester');
             $table->string('technology');
             $table->string('book_name');
+            $table->integer('inserter_id');
             $table->timestamps();
         });
     }

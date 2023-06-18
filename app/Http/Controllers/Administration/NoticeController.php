@@ -26,11 +26,15 @@ class NoticeController extends Controller
     public function NoticeAdd(Request $request)
     {
 
+        $user = session('user');
+        $inserter_id = $user['user_id'];
+
         $notice = new Notice;
 
         $notice->category = $request['category'];
         $notice->title = $request['title'];
         $notice->description = $request['description'];
+        $notice->inserter_id = $inserter_id;
         $notice->save();
 
         session()->flash('success', 'New Notice added successfully.');

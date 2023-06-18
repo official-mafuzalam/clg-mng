@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('category');
             $table->text('title');
             $table->longText('description');
+            $table->integer('inserter_id');
             $table->timestamps();
         });
     }

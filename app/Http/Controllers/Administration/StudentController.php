@@ -33,6 +33,10 @@ class StudentController extends Controller
     public function StudentAdd(Request $request)
     {
 
+        $user = session('user');
+        $userId = $user['user_id'];
+
+
         $random_num = null;
         do {
             $random_num = rand(10000, 99999);
@@ -74,7 +78,7 @@ class StudentController extends Controller
         $student->hsc_reg = $request['hsc_reg'];
         $student->hsc_result = $request['hsc_result'];
         $student->password = $request['password'];
-        $student->inserter_id = "100001";
+        $student->inserter_id = $userId;
         $student->save();
 
         // Show success notification

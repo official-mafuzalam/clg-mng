@@ -235,9 +235,9 @@
                                     <div>
                                         <div class="inline-flex gap-x-2">
                                             <button
-                                                class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-red-400 text-gray-700 shadow-sm align-middle hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-red-300 dark:hover:bg-red-600 dark:border-gray-700 dark:text-slate-950 dark:hover:text-white dark:focus:ring-offset-gray-800"
+                                                class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-red-400 text-gray-700 shadow-sm align-middle hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm dark:bg-red-300 dark:hover:bg-red-600 dark:border-gray-700 dark:text-slate-950 dark:hover:text-white dark:focus:ring-offset-gray-800"
                                                 type="submit">
-                                                Upgrade
+                                                Go
                                             </button>
                                         </div>
                                     </div>

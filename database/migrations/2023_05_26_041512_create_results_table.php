@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('technology');
             $table->string('subject');
             $table->integer('marks');
+            $table->integer('inserter_id');
             $table->timestamps();
         });
     }

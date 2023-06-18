@@ -26,6 +26,9 @@ class TeacherController extends Controller
     public function TeacherAdd(Request $request)
     {
 
+        $user = session('user');
+        $inserter_id = $user['user_id'];
+
         $random_num = null;
         do {
             $random_num = rand(100000, 999999);
@@ -48,7 +51,7 @@ class TeacherController extends Controller
         $teacher->address_zila = $request['address_zila'];
         $teacher->designation = $request['designation'];
         $teacher->password = $request['password'];
-        $teacher->inserter_id = "100001";
+        $teacher->inserter_id = $inserter_id;
         $teacher->save();
 
         session()->flash('success', 'New Teacher added successfully.');

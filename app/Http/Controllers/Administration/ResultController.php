@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Courses;
 use App\Models\Results;
 use App\Models\Student;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class ResultController extends Controller
 {
@@ -65,7 +68,10 @@ class ResultController extends Controller
 
     public function ResultSaveMarks(Request $request)
     {
-        $studentId = $request->input('studentId');
+        $user = session('user');
+        $inserter_id = $user['user_id'];
+
+        // $studentId = $request->input('studentId');
         $marks = $request->input('marks');
         $subject = $request->input('subject');
         $userId = $request->input('userId');
@@ -74,6 +80,24 @@ class ResultController extends Controller
         $current_semester = $request->input('current_semester');
         $rollNo = $request->input('rollNo');
 
+        $student = Student::where('user_id', $userId)->first();
+        $email = $student->student_email;
+
+        $data = [
+            'marks' => $request->input('marks'),
+            'subject' => $request->input('subject'),
+            'userId' => $request->input('userId'),
+            'userName' => $request->input('userName'),
+            'technology' => $request->input('technology'),
+            'current_semester' => $request->input('current_semester'),
+            'rollNo' => $request->input('rollNo')
+        ];
+
+        Mail::send('mail.result_confirm', $data, function ($message) use ($email) {
+            $message->to($email)
+                ->subject('Your result published');
+        });
+        
         $result = new Results();
         $result->user_id = $userId;
         $result->roll_no = $rollNo;
@@ -82,9 +106,12 @@ class ResultController extends Controller
         $result->technology = $technology;
         $result->subject = $subject;
         $result->marks = $marks;
+        $result->inserter_id = $inserter_id;
         $result->save();
 
         return response()->json(['success' => true, 'message' => 'Marks saved successfully']);
+        
+
 
     }
 

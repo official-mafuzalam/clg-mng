@@ -132,7 +132,8 @@
     <!-- Page Heading -->
     <header>
 
-        <h1 class="block text-2xl font-bold text-gray-800 sm:text-5xl dark:text-white text-center">Best High School
+        <h1 class="block text-2xl font-bold text-gray-800 sm:text-5xl dark:text-white text-center">
+            Best Politechnic Institute
         </h1>
         <p class="mt-2 text-lg sm:text-2xl text-gray-800 dark:text-gray-400 text-center">Hemayetpur, Savar, Dhaka</p>
 

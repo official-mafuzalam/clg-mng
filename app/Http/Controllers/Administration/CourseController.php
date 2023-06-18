@@ -27,11 +27,15 @@ class CourseController extends Controller
     public function CourseAdd(Request $request)
     {
 
+        $user = session('user');
+        $inserter_id = $user['user_id'];
+
         $course = new Courses;
 
         $course->semester = $request['semester'];
         $course->technology = $request['technology'];
         $course->book_name = $request['book_name'];
+        $course->inserter_id = $inserter_id;
         $course->save();
 
         // Show success notification
