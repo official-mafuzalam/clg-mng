@@ -321,6 +321,31 @@
 
                 <div class="col-span-3">
                     <div class="inline-block">
+                        <label for="t_features-switch"
+                            class="inline-block text-sm text-gray-800 mt-2.5 dark:text-gray-200">
+                            Teacher Features
+                        </label>
+                    </div>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-span-9">
+                    <div class="flex items-center">
+                        <div class="flex items-center">
+                            <input name="t_features" type="checkbox" id="t_features-switch"
+                                class="relative shrink-0 w-11 h-6 bg-gray-100 checked:bg-none checked:bg-blue-600 rounded-full cursor-pointer transition-colors ease-in-out duration-200 border border-transparent ring-1 ring-transparent focus:border-blue-600 focus:ring-blue-600 ring-offset-white focus:outline-none appearance-none dark:bg-gray-700 dark:checked:bg-blue-600 dark:focus:ring-offset-gray-800
+                                before:inline-block before:w-5 before:h-5 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 dark:before:bg-gray-400 dark:checked:before:bg-blue-200"
+                                @if ($t_features == 1) checked @endif>
+                            <label for="t_features-switch"
+                                class="text-sm text-gray-500 ml-3 dark:text-gray-400">Active</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-span-3">
+                    <div class="inline-block">
                         <label for="n_add-switch"
                             class="inline-block text-sm text-gray-800 mt-2.5 dark:text-gray-200">
                             Notice Add

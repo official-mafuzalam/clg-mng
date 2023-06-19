@@ -7,18 +7,17 @@
 </head>
 
 <body>
-    <h1>Deposit Confirmation</h1>
-    <p>Thank you for your deposit.</p>
-    <p>Your deposit has been successfully processed with the following details:</p>
+    <h1>Your {{ $subject }} Result</h1>
+    <p>Thank you for attending exam.</p>
 
     <ul>
         <li>Student ID: {{ $userId }}</li>
+        <li>Roll No: {{ $rollNo }}</li>
         <li>Name: {{ $userName }}</li>
-        <li>Marks: {{ $marks }}</li>
-        <li>Subject: {{ $subject }}</li>
         <li>Semester: {{ $current_semester }}</li>
         <li>Technology: {{ $technology }}</li>
-        <li>Roll No: {{ $rollNo }}</li>
+        <li>Subject: {{ $subject }}</li>
+        <li>Marks: {{ $marks }}</li>
         <!-- Add more details here -->
     </ul>
 

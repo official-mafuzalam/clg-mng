@@ -100,7 +100,7 @@ class StudentController extends Controller
             'email' => $request['student_email']
         ];
 
-        Mail::send('administration.student_add_confirmation', $data, function ($message) use ($email) {
+        Mail::send('mail.student_add_confirmation', $data, function ($message) use ($email) {
             $message->to($email)
                 ->subject('Admission Confirmation');
         });

@@ -42,6 +42,22 @@ Route::get('/', function () {
 
 });
 
+Route::get('/home', function () {
+
+    if (Auth::check()) {
+        if (auth()->user()->type == 'administration') {
+            return redirect()->route('administration.welcome');
+        } else if (auth()->user()->type == 'accountants') {
+            return redirect()->route('accountants.welcome');
+        } else {
+            return redirect()->route('dep_teacher.welcome');
+        }
+    } else {
+        return redirect()->route('login');
+    }
+
+});
+
 Auth::routes();
 
 
@@ -186,30 +202,49 @@ Route::middleware(['auth', 'user-access:administration'])->group(function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*------------------------------------------
 --------------------------------------------
 All dep_teacher Routes List
 --------------------------------------------
 --------------------------------------------*/
-Route::middleware(['auth', 'user-access:dep_teacher'])->group(function () {
+// Route::middleware(['auth', 'user-access:dep_teacher'])->group(function () {
 
-    Route::get('/dep_teacher/welcome', [Dep_TeacherController::class, 'HomePage'])->name('dep_teacher.welcome');
+//     Route::get('/dep_teacher/welcome', [Dep_TeacherController::class, 'HomePage'])->name('dep_teacher.welcome');
 
-    Route::group(['prefix' => 'dep_teacher'], function () {
+//     Route::group(['prefix' => 'dep_teacher'], function () {
 
-        Route::get('session', function () {
+//         Route::get('session', function () {
 
-            $session = session()->all();
-            p($session);
+//             $session = session()->all();
+//             p($session);
 
-        });
+//         });
 
-        Route::get('/student_add', [StudentController::class, 'StudentAddPage'])->name('student.addPage');
+//         Route::get('/student_add', [StudentController::class, 'StudentAddPage'])->name('student.addPage');
 
 
-    });
+//     });
 
-});
+// });
 
 
 
@@ -218,9 +253,9 @@ Route::middleware(['auth', 'user-access:dep_teacher'])->group(function () {
 All accountants Routes List
 --------------------------------------------
 --------------------------------------------*/
-Route::middleware(['auth', 'user-access:accountants'])->group(function () {
+// Route::middleware(['auth', 'user-access:accountants'])->group(function () {
 
-    Route::get('/accountants/welcome', [AccountantsController::class, 'HomePage'])->name('accountants.welcome');
-});
+//     Route::get('/accountants/welcome', [AccountantsController::class, 'HomePage'])->name('accountants.welcome');
+// });
 
 // Route::get('/', [AdministrationController::class, 'HomePage'])->name('home');

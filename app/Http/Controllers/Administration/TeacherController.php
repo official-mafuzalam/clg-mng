@@ -91,7 +91,7 @@ class TeacherController extends Controller
             'password' => $request['password']
         ];
 
-        Mail::send('administration.teacher_add_confirmation', $data, function ($message) use ($email) {
+        Mail::send('mail.teacher_add_confirmation', $data, function ($message) use ($email) {
             $message->to($email)
                 ->subject('Join to Best Polytechnic Institute Confirmation');
         });
@@ -272,6 +272,9 @@ class TeacherController extends Controller
         $t_trash = T_features::where('id', $id)
             ->value('t_trash');
 
+        $t_features = T_features::where('id', $id)
+            ->value('t_features');
+
         $n_add = T_features::where('id', $id)
             ->value('n_add');
 
@@ -323,6 +326,7 @@ class TeacherController extends Controller
                 't_add',
                 't_all',
                 't_trash',
+                't_features',
                 'n_add',
                 'n_all',
                 'n_archived',

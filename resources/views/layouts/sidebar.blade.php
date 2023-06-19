@@ -189,12 +189,14 @@
                             </li>
                         @endif
 
+                        @if (session('user.t_features', 'default') == 1)
                         <li>
                             <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
                                 href="{{ route('administration_teacher.features') }}">
                                 Teacher Features
                             </a>
                         </li>
+                        @endif
                     </ul>
                 </div>
             </li>
