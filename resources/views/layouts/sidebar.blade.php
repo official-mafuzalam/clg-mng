@@ -52,7 +52,7 @@
         <ul class="space-y-1.5">
             <li>
                 <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300"
-                    href="{{ route('administration.welcome') }}">
+                    href="/">
                     <svg class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -93,30 +93,42 @@
                 <div id="account-accordion-child"
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_student.add') }}">
-                                Add Student
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_student.all') }}">
-                                All Student
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_student.trashPage') }}">
-                                Trashed Student
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_semester.update') }}">
-                                Update Semester
-                            </a>
-                        </li>
+
+
+                        @if (session('user.s_add', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_student.add') }}">
+                                    Add Student
+                                </a>
+                            </li>
+                        @endif
+
+                        @if (session('user.s_all', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_student.all') }}">
+                                    All Student
+                                </a>
+                            </li>
+                        @endif
+                        @if (session('user.s_trash', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_student.trashPage') }}">
+                                    Trashed Student
+                                </a>
+                            </li>
+                        @endif
+                        @if (session('user.s_u_sem', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_semester.update') }}">
+                                    Update Semester
+                                </a>
+                            </li>
+                        @endif
+
                     </ul>
                 </div>
             </li>
@@ -149,22 +161,38 @@
                 <div id="account-accordion-child"
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
+
+                        @if (session('user.t_add', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_teacher.addPage') }}">
+                                    Add Teacher
+                                </a>
+                            </li>
+                        @endif
+
+                        @if (session('user.t_all', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_teacher.all') }}">
+                                    All Teacher
+                                </a>
+                            </li>
+                        @endif
+
+                        @if (session('user.t_trash', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_teacher.trashPage') }}">
+                                    Trashed Teacher
+                                </a>
+                            </li>
+                        @endif
+
                         <li>
                             <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_teacher.addPage') }}">
-                                Add Teacher
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_teacher.all') }}">
-                                All Teacher
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_teacher.trashPage') }}">
-                                Trashed Teacher
+                                href="{{ route('administration_teacher.features') }}">
+                                Teacher Features
                             </a>
                         </li>
                     </ul>
@@ -199,24 +227,34 @@
                 <div id="account-accordion-child"
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_notice.addPage') }}">
-                                Add Notice
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_notice.all') }}">
-                                All Notice
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_notice.archivePage') }}">
-                                Archived Notice
-                            </a>
-                        </li>
+
+                        @if (session('user.n_add', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_notice.addPage') }}">
+                                    Add Notice
+                                </a>
+                            </li>
+                        @endif
+
+
+                        @if (session('user.n_all', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_notice.all') }}">
+                                    All Notice
+                                </a>
+                            </li>
+                        @endif
+
+                        @if (session('user.n_archived', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_notice.archivePage') }}">
+                                    Archived Notice
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </li>
@@ -249,18 +287,23 @@
                 <div id="account-accordion-child"
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_result.publishPage') }}">
-                                Result Publish
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_result.checkPage') }}">
-                                Result Check
-                            </a>
-                        </li>
+                        @if (session('user.r_publish', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_result.publishPage') }}">
+                                    Result Publish
+                                </a>
+                            </li>
+                        @endif
+
+                        @if (session('user.r_check', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_result.checkPage') }}">
+                                    Result Check
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </li>
@@ -293,18 +336,23 @@
                 <div id="account-accordion-child"
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_deposit.findPage') }}">
-                                Deposit
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_deposit.quarry') }}">
-                                Deposit query
-                            </a>
-                        </li>
+                        @if (session('user.f_deposit', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_deposit.findPage') }}">
+                                    Deposit
+                                </a>
+                            </li>
+                        @endif
+
+                        @if (session('user.f_quarry', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_deposit.quarry') }}">
+                                    Deposit query
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </li>
@@ -337,18 +385,24 @@
                 <div id="account-accordion-child"
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_course.addPage') }}">
-                                Add Course
-                            </a>
-                        </li>
-                        <li>
-                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                href="{{ route('administration_course.allPage') }}">
-                                Courses List
-                            </a>
-                        </li>
+
+                        @if (session('user.c_add', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_course.addPage') }}">
+                                    Add Course
+                                </a>
+                            </li>
+                        @endif
+
+                        @if (session('user.c_all', 'default') == 1)
+                            <li>
+                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                    href="{{ route('administration_course.allPage') }}">
+                                    Courses List
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </li>

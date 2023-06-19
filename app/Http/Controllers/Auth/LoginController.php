@@ -7,6 +7,8 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\DB;
+use App\Models\T_features;
 
 class LoginController extends Controller
 {
@@ -55,10 +57,17 @@ class LoginController extends Controller
         ]);
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-
+            
             $user = auth()->user();
-
-            $request->session()->put('user', $user->toArray());
+        
+            // Retrieve the user's full details from the T_features table
+            $userDetails = DB::table('t_features')
+                ->where('user_id', $user->user_id)
+                ->first();
+        
+            // Store the user's full details in the session
+            $request->session()->put('user', array_merge($user->toArray(), (array)$userDetails));
+        
 
             // Redirect to the appropriate route
             if ($user->type == 'administration') {

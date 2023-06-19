@@ -107,6 +107,11 @@ Route::middleware(['auth', 'user-access:administration'])->group(function () {
 
         Route::get('/teacher_restore/{id}', [TeacherController::class, 'TeacherRestore'])->name('administration_teacher.restore');
 
+        Route::get('/teacher_features', [TeacherController::class, 'TeacherFeatures'])->name('administration_teacher.features');
+        
+        Route::get('/teacher_features_edit/{id}', [TeacherController::class, 'TeacherFeaturesEdit'])->name('administration_teacher.featuresEdit');
+        
+        Route::post('/teacher_features_update/{id}', [TeacherController::class, 'TeacherFeaturesUpdate'])->name('administration_teacher.teacher_featuresUpdate');
 
         // Notice Section
 
