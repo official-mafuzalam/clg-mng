@@ -91,13 +91,17 @@ class AdministrationController extends Controller
             ->value('c_all');
 
 
+        $date = date('Y-m-d');
 
         $totalStudents = Student::count();
         $totalTeachers = Teachers::count();
         $notice = Notice::where('status', 1)->get();
         $totalNotice = count($notice);
-        $totalAmount = Deposits::sum('deposit_amount');
-        $totalOwnAmount = Deposits::where('inserter_id', '1000001')->sum('deposit_amount');
+        $totalAmount = Deposits::where('date', $date)
+            ->sum('deposit_amount');
+        $totalOwnAmount = Deposits::where('inserter_id', $user_id)
+            ->where('date', $date)
+            ->sum('deposit_amount');
 
         $data = compact(
             'totalStudents',
@@ -143,8 +147,32 @@ class AdministrationController extends Controller
 
         return view('administration.student_add')->with($data);
 
+    }
 
+
+    public function OwnProfile()
+    {
+
+        $user_id = session('user.user_id');
+
+
+        $profile_data = Teachers::where('user_id', $user_id)->get();
+
+
+        $data = compact('profile_data');
+
+
+        return view('administration.own_profile')->with($data);
 
     }
+
+
+
+
+
+
+
+
+
 
 }

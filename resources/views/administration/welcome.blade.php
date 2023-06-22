@@ -167,7 +167,6 @@
             </div>
             <div class="rounded-md bg-slate-500 dark:bg-slate-900 p-2">
                 <p class="sm:font-bold sm:text-lg text-sm overflow-hidden text-teal-500 dark:text-gray-200 text-center">
-                    This
                     Today Total Deposit
                 </p>
                 <p class="sm:font-bold text-slate-950 dark:text-gray-400 text-center"> {{ $totalAmount }} ৳</p>
@@ -179,7 +178,6 @@
             </div>
             <div class="rounded-md bg-slate-500 dark:bg-slate-900 p-2">
                 <p class="sm:font-bold sm:text-lg text-sm overflow-hidden text-teal-500 dark:text-gray-200 text-center">
-                    This
                     Today My Deposit
                 </p>
                 <p class="sm:font-bold text-slate-950 dark:text-gray-400 text-center"> {{ $totalOwnAmount }} ৳</p>

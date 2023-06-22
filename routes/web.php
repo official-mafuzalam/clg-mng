@@ -194,6 +194,10 @@ Route::middleware(['auth', 'user-access:administration'])->group(function () {
         Route::get('/deposit_quarry', [DepositController::class, 'DepositQuarry'])->name('administration_deposit.quarry');
         // 
 
+
+        // Own Profile Section
+        Route::get('/own_profile', [AdministrationController::class, 'OwnProfile'])->name('administration.profile');
+
     });
 
 
