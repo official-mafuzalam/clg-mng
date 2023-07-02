@@ -54,13 +54,14 @@ class ResultController extends Controller
         } else {
 
             $response = [
-                'message' => count($results) . ' Results found',
+                'message' => count($results) . ' Results found for ' . $subject . ' in ' . $technology . ' technology ' . $semester . ' semester',
                 'status' => 1,
                 'num_of_data' => count($results),
                 'data' => $results
             ];
 
-        };
+        }
+        ;
 
         return response()->json($response, 200);
 
@@ -84,7 +85,7 @@ class ResultController extends Controller
 
 
 
-    
+
     /**
      * Display a listing of the resource.
      */

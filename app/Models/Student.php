@@ -16,18 +16,42 @@ class Student extends Model
     protected $primaryKey = "id";
 
     protected $fillable = [
-        'user_id',
-        'user_name',
-        'gender',
-        'technology',
-        'admission_year',
-        'current_semester',
-        'clg_id',
-        'roll_no',
-        'mobile_number',
-        'email',
-        'inserter_id'
-    ];
+    'user_id',
+    'technology',
+    'admission_year',
+    'current_semester',
+    'clg_id',
+    'roll_no',
+    'reg_no',
+    'student_name',
+    'student_nid',
+    'student_mobile',
+    'student_gender',
+    'father_name',
+    'father_nid',
+    'father_mobile',
+    'mother_name',
+    'mother_nid',
+    'mother_mobile',
+    'address_street',
+    'address_postOffice',
+    'address_upazila',
+    'address_zila',
+    'ssc_board',
+    'ssc_group',
+    'ssc_roll',
+    'ssc_reg',
+    'ssc_result',
+    'hsc_board',
+    'hsc_group',
+    'hsc_roll',
+    'hsc_reg',
+    'hsc_result',
+    'password',
+    'student_email',
+    'inserter_id'
+];
+
 
     
 }

@@ -38,6 +38,10 @@ Route::prefix('api-v1')->group(function () {
 
     Route::post('student/add', [StudentController::class, 'student_add']);
 
+    Route::get('student/add/{user_id}/{technology}/{admission_year}/{current_semester}/{clg_id}/{roll_no}/{student_name}/{student_nid}/{student_email}/{student_mobile}/{student_gender}/{father_name}/{father_nid}/{father_mobile}/{mother_name}/{mother_nid}/{mother_mobile}/{address_street}/{address_postOffice}/{address_upazila}/{address_zila}/{ssc_board}/{ssc_group}/{ssc_roll}/{ssc_reg}/{ssc_result}/{password}/{inserter_id}', [StudentController::class, 'student_add_data']);
+
+
+
 
     // Teacher Section
 
@@ -75,8 +79,20 @@ Route::prefix('api-v1')->group(function () {
 
     Route::post('notice/add', [NoticeController::class, 'notice_add']);
 
+    Route::get('notice/add/{category}/{title}/{description}/{inserter_id}', [NoticeController::class, 'notice_add_data']);
 
 
+
+
+
+
+
+
+
+
+
+    
+    Route::get('/data/{name}', [NoticeController::class, 'postData']);
 
 
 

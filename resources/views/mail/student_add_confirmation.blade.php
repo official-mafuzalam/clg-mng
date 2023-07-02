@@ -13,14 +13,14 @@
 
     <ul>
         <li>Student ID: {{ $user_id }}</li>
-        <li>Student Name: {{ $user_name }}</li>
+        <li>Student Name: {{ $student_name }}</li>
         <li>Technology: {{ $technology }}</li>
         <li>Semester: {{ $current_semester }}</li>
-        <li>Gender: {{ $gender }}</li>
+        <li>Gender: {{ $student_gender }}</li>
         <li>Collage ID: {{ $clg_id }}</li>
         <li>Roll No: {{ $roll_no }}</li>
-        <li>Mobile Number: {{ $mobile_number }}</li>
-        <li>Email: {{ $email }}</li>
+        <li>Mobile Number: {{ $student_mobile }}</li>
+        <li>Email: {{ $student_email }}</li>
         <!-- Add more details here -->
     </ul>
 

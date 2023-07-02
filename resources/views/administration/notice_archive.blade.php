@@ -234,11 +234,11 @@
                                                 <div class="flex items-center gap-x-3">
                                                     <div class="grow">
                                                         @if ($notice->status == 1)
-                                                            <button class="btn btn-success btn-sm">
+                                                            <button class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-green-500 text-gray-700 shadow-sm align-middle transition-all text-sm dark:bg-green-400">
                                                                 Active
                                                             </button>
                                                         @else
-                                                            <button class="btn btn-warning btn-sm">
+                                                            <button class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md border font-medium bg-green-500 text-gray-700 shadow-sm align-middle transition-all text-sm dark:bg-green-400">
                                                                 Archived
                                                             </button>
                                                         @endif

@@ -72,6 +72,7 @@ class NoticeController extends Controller
 
 
 
+    // Use this code for post method
     public function notice_add(Request $request)
     {
 
@@ -79,7 +80,8 @@ class NoticeController extends Controller
 
             'category' => ['required'],
             'title' => ['required'],
-            'description' => ['required']
+            'description' => ['required'],
+            'inserter_id' => ['required']
 
         ]);
 
@@ -93,7 +95,8 @@ class NoticeController extends Controller
 
                 'category' => $request->category,
                 'title' => $request->title,
-                'description' => $request->description
+                'description' => $request->description,
+                'inserter_id' => $request->inserter_id
 
             ];
 
@@ -128,6 +131,103 @@ class NoticeController extends Controller
         }
 
 
+    }
+
+
+    // Use this code for get method
+    public function notice_add_data(Request $request, $category, $title, $description, $inserter_id)
+    {
+
+        $data = [
+
+            'category' => $category,
+            'title' => $title,
+            'description' => $description,
+            'inserter_id' => $inserter_id
+
+        ];
+
+        DB::beginTransaction();
+
+        try {
+
+            $notice = Notice::create($data);
+            DB::commit();
+
+        } catch (\Exception $e) {
+
+            p($e->getMessage());
+            $notice = null;
+
+        }
+
+        if ($notice != null) {
+
+            return response()->json([
+                'message' => 'Notice added successfully',
+                'status' => 1
+            ], 200);
+
+        } else {
+
+            return response()->json([
+                'message' => 'Internal server error',
+                'status' => 0
+            ], 500);
+
+        }
+
+
+        // Use this code if its not worked
+        // return response()->json([
+        //     'category' => urldecode($category),
+        //     'title' => urldecode($title),
+        //     'description' => urldecode($description),
+        //     'inserter_id' => urldecode($inserter_id),
+        // ]);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public function postData(Request $request, $name)
+    {
+        // Retrieve header data
+        $headerData = $request->header();
+
+        // Access specific header values
+        $authorization = $request->header('Authorization');
+        $contentType = $request->header('Content-Type');
+
+        // Process the received data
+        // ...
+
+        // Return a response with the name
+        return response()->json(['name' => urldecode($name)]);
     }
 
 

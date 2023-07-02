@@ -376,6 +376,7 @@ class TeacherController extends Controller
             't_add',
             't_all',
             't_trash',
+            't_features',
             'n_add',
             'n_all',
             'n_archived',
@@ -403,6 +404,7 @@ class TeacherController extends Controller
         $features->t_add = $checkboxValues['t_add'];
         $features->t_all = $checkboxValues['t_all'];
         $features->t_trash = $checkboxValues['t_trash'];
+        $features->t_features = $checkboxValues['t_features'];
         $features->n_add = $checkboxValues['n_add'];
         $features->n_all = $checkboxValues['n_all'];
         $features->n_archived = $checkboxValues['n_archived'];

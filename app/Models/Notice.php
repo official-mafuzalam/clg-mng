@@ -19,6 +19,7 @@ class Notice extends Model
         'category',
         'title',
         'description',
+        'inserter_id',
 
     ];
 

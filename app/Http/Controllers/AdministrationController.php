@@ -153,10 +153,12 @@ class AdministrationController extends Controller
     public function OwnProfile()
     {
 
-        $user_id = session('user.user_id');
+        $id = session('user.id');
 
 
-        $profile_data = Teachers::where('user_id', $user_id)->get();
+        // $profile_data = Teachers::where('user_id', $user_id)->get();
+
+        $profile_data = Teachers::find($id);
 
 
         $data = compact('profile_data');

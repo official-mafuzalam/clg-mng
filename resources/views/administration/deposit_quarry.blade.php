@@ -111,7 +111,7 @@
 
 {{-- Page Title --}}
 @section('page-title')
-    <title>Find Depositor | Best Politechnic Institute</title>
+    <title>Deposit Quarry | Best Politechnic Institute</title>
 @endsection
 
 <!-- Breadcrumb -->

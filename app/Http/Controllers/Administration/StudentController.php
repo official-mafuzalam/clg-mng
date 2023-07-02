@@ -56,15 +56,15 @@ class StudentController extends Controller
         $student->student_nid = $request['student_nid'];
         $student->student_email = $request['student_email'];
         $student->student_mobile = $request['student_mobile'];
+        $student->student_gender = $request['student_gender'];
         $student->father_name = $request['father_name'];
         $student->father_nid = $request['father_nid'];
         $student->father_mobile = $request['father_mobile'];
         $student->mother_name = $request['mother_name'];
         $student->mother_nid = $request['mother_nid'];
         $student->mother_mobile = $request['mother_mobile'];
-        $student->student_gender = $request['student_gender'];
         $student->address_street = $request['address_street'];
-        $student->address_postOffice = $request['address_postOffice'];
+        $student->address_postOffice = $request['address_street'];
         $student->address_upazila = $request['address_upazila'];
         $student->address_zila = $request['address_zila'];
         $student->ssc_board = $request['ssc_board'];
@@ -90,14 +90,14 @@ class StudentController extends Controller
 
         $data = [
             'user_id' => $random_num,
-            'user_name' => $request['student_name'],
+            'student_name' => $request['student_name'],
             'technology' => $request['technology'],
             'current_semester' => $request['current_semester'],
-            'gender' => $request['student_gender'],
+            'student_gender' => $request['student_gender'],
             'clg_id' => $request['clg_id'],
             'roll_no' => $request['roll_no'],
-            'mobile_number' => $request['student_mobile'],
-            'email' => $request['student_email']
+            'student_mobile' => $request['student_mobile'],
+            'student_email' => $request['student_email']
         ];
 
         Mail::send('mail.student_add_confirmation', $data, function ($message) use ($email) {
