@@ -41,6 +41,8 @@ Route::prefix('api-v1')->group(function () {
     Route::get('student/add/{user_id}/{technology}/{admission_year}/{current_semester}/{clg_id}/{roll_no}/{student_name}/{student_nid}/{student_email}/{student_mobile}/{student_gender}/{father_name}/{father_nid}/{father_mobile}/{mother_name}/{mother_nid}/{mother_mobile}/{address_street}/{address_postOffice}/{address_upazila}/{address_zila}/{ssc_board}/{ssc_group}/{ssc_roll}/{ssc_reg}/{ssc_result}/{password}/{inserter_id}', [StudentController::class, 'student_add_data']);
 
 
+    // this is a sample url for add student using api
+    // http://127.0.0.1:8000/api/api-v1/student/add/5625/Computer/23-26/3rd/369-23/36/Suvo/123456/everything885@gmail.com/0175365145/Male/Mahmud/123636/01523642/Salma/1236645/0123652/Hemayetpur/Savar/Savar/Dhaka/Dhaka/Arts/1236/2563152/3.63/123654/100000
 
 
     // Teacher Section

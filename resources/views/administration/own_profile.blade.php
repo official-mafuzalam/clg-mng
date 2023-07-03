@@ -227,7 +227,7 @@
 
             <div class="col-span-9">
                 <div class="sm:flex">
-                    <input name="password" readonly id="teacher-password" type="text"
+                    <input name="password" readonly id="teacher-password" type="password"
                         class="py-2 px-3 pr-11 block w-full border-gray-200 shadow-lg text-sm rounded-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
                         placeholder="xxxxxxxxxxxx" value="{{ $profile_data->password }}">
                 </div>
