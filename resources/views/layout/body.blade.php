@@ -1,5 +1,4 @@
 @include('layouts.header')
-
 @include('layouts.sidebar')
 
 <!-- Content -->

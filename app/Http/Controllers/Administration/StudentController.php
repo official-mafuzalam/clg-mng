@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Administration;
 
 use App\Http\Controllers\Controller;
 use App\Models\Student;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
@@ -83,6 +84,20 @@ class StudentController extends Controller
 
         // Show success notification
         session()->flash('success', 'New Student add successfully.');
+
+
+        // Create Teacher User login
+
+        $user = new User;
+
+        $user->user_id = $random_num;
+        $user->name = $request['student_name'];
+        $user->email = $request['student_email'];
+        $user->type = 2;
+        $user->password = Hash::make($request['password']);
+        $user->save();
+
+
 
 
         // Mail to Student for confirmation

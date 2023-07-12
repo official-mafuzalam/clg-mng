@@ -4,7 +4,7 @@
 use App\Http\Controllers\Administration\StudentController;
 use App\Http\Controllers\AdministrationController;
 use App\Http\Controllers\AccountantsController;
-use App\Http\Controllers\Dep_TeacherController;
+use App\Http\Controllers\StudentPortalController;
 use App\Http\Controllers\Administration\TeacherController;
 use App\Http\Controllers\Administration\NoticeController;
 use App\Http\Controllers\Administration\CourseController;
@@ -31,8 +31,8 @@ Route::get('/', function () {
     if (Auth::check()) {
         if (auth()->user()->type == 'administration') {
             return redirect()->route('administration.welcome');
-        } else if (auth()->user()->type == 'accountants') {
-            return redirect()->route('accountants.welcome');
+        } else if (auth()->user()->type == 'student_portal') {
+            return redirect()->route('student_portal.welcome');
         } else {
             return redirect()->route('dep_teacher.welcome');
         }
@@ -47,8 +47,8 @@ Route::get('/home', function () {
     if (Auth::check()) {
         if (auth()->user()->type == 'administration') {
             return redirect()->route('administration.welcome');
-        } else if (auth()->user()->type == 'accountants') {
-            return redirect()->route('accountants.welcome');
+        } else if (auth()->user()->type == 'student_portal') {
+            return redirect()->route('student_portal.welcome');
         } else {
             return redirect()->route('dep_teacher.welcome');
         }
@@ -124,9 +124,9 @@ Route::middleware(['auth', 'user-access:administration'])->group(function () {
         Route::get('/teacher_restore/{id}', [TeacherController::class, 'TeacherRestore'])->name('administration_teacher.restore');
 
         Route::get('/teacher_features', [TeacherController::class, 'TeacherFeatures'])->name('administration_teacher.features');
-        
+
         Route::get('/teacher_features_edit/{id}', [TeacherController::class, 'TeacherFeaturesEdit'])->name('administration_teacher.featuresEdit');
-        
+
         Route::post('/teacher_features_update/{id}', [TeacherController::class, 'TeacherFeaturesUpdate'])->name('administration_teacher.teacher_featuresUpdate');
 
         // Notice Section
@@ -206,6 +206,32 @@ Route::middleware(['auth', 'user-access:administration'])->group(function () {
 
 
 
+/*------------------------------------------
+--------------------------------------------
+All student_portal Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:student_portal'])->group(function () {
+
+    Route::group(['prefix' => '/student_portal'], function () {
+
+        Route::get('/session', function () {
+
+            $session = session()->all();
+            p($session);
+
+        });
+
+        Route::get('/welcome', [StudentPortalController::class, 'HomePage'])->name('student_portal.welcome');
+
+
+
+
+    });
+
+
+    // Route::get('/accountants/welcome', [AccountantsController::class, 'HomePage'])->name('accountants.welcome');
+});
 
 
 
@@ -252,14 +278,6 @@ All dep_teacher Routes List
 
 
 
-/*------------------------------------------
---------------------------------------------
-All accountants Routes List
---------------------------------------------
---------------------------------------------*/
-// Route::middleware(['auth', 'user-access:accountants'])->group(function () {
 
-//     Route::get('/accountants/welcome', [AccountantsController::class, 'HomePage'])->name('accountants.welcome');
-// });
 
 // Route::get('/', [AdministrationController::class, 'HomePage'])->name('home');

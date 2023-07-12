@@ -72,8 +72,8 @@ class LoginController extends Controller
             // Redirect to the appropriate route
             if ($user->type == 'administration') {
                 return redirect()->route('administration.welcome');
-            } else if ($user->type == 'accountants') {
-                return redirect()->route('accountants.welcome');
+            } else if ($user->type == 'student_portal') {
+                return redirect()->route('student_portal.welcome');
             } else {
                 return redirect()->route('dep_teacher.welcome');
             }
