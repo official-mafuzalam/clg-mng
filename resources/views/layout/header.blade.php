@@ -8,6 +8,9 @@
     @vite('resources/js/app.js')
     @yield('page-title')
 
+
+</head>
+
 <body class="bg-gray-50 dark:bg-slate-900">
     <!-- ========== HEADER ========== -->
     <header

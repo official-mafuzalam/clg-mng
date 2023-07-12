@@ -1,4 +1,4 @@
-@extends('layouts.body')
+@extends('layout.body')
 
 {{-- Page Title --}}
 @section('page-title')
@@ -128,12 +128,6 @@
             </div>
 
         </div>
-
-    </div>
-
-
-
-
 
     </div>
 

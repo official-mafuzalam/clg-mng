@@ -224,6 +224,8 @@ Route::middleware(['auth', 'user-access:student_portal'])->group(function () {
 
         Route::get('/welcome', [StudentPortalController::class, 'HomePage'])->name('student_portal.welcome');
 
+        Route::get('/profile', [StudentPortalController::class, 'profile'])->name('student_portal.profile');
+
 
 
 
