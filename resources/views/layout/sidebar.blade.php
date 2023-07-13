@@ -129,7 +129,7 @@
                     </ul>
                 </div>
             </li>
-            
+
             <li class="hs-accordion" id="account-accordion">
                 <a class="hs-accordion-toggle flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white"
                     href="javascript:;">
@@ -158,16 +158,12 @@
                 <div id="account-accordion-child"
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
-
-                        @if (session('user.n_add', 'default') == 1)
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                    href="{{ route('administration_notice.addPage') }}">
-                                    Add Notice
-                                </a>
-                            </li>
-                        @endif
-
+                        <li>
+                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                href="{{ route('student_portal.notice') }}">
+                                All Notice
+                            </a>
+                        </li>
 
                         @if (session('user.n_all', 'default') == 1)
                             <li>
@@ -218,23 +214,13 @@
                 <div id="account-accordion-child"
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
-                        @if (session('user.r_publish', 'default') == 1)
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                    href="{{ route('administration_result.publishPage') }}">
-                                    Result Publish
-                                </a>
-                            </li>
-                        @endif
 
-                        @if (session('user.r_check', 'default') == 1)
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                    href="{{ route('administration_result.checkPage') }}">
-                                    Result Check
-                                </a>
-                            </li>
-                        @endif
+                        <li>
+                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                href="{{ route('student_portal.result') }}">
+                                Result Check
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>
@@ -267,14 +253,12 @@
                 <div id="account-accordion-child"
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
-                        @if (session('user.f_deposit', 'default') == 1)
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                    href="{{ route('administration_deposit.findPage') }}">
-                                    Deposit
-                                </a>
-                            </li>
-                        @endif
+                        <li>
+                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                href="{{ route('student_portal.fees_deposit') }}">
+                                All Deposit
+                            </a>
+                        </li>
 
                         @if (session('user.f_quarry', 'default') == 1)
                             <li>
@@ -317,14 +301,12 @@
                     class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                     <ul class="pt-2 pl-2">
 
-                        @if (session('user.c_add', 'default') == 1)
-                            <li>
-                                <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
-                                    href="{{ route('administration_course.addPage') }}">
-                                    Add Course
-                                </a>
-                            </li>
-                        @endif
+                        <li>
+                            <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300"
+                                href="{{ route('student_portal.course') }}">
+                                Running Course
+                            </a>
+                        </li>
 
                         @if (session('user.c_all', 'default') == 1)
                             <li>

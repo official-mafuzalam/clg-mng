@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 use App\Models\T_features;
+use App\Models\Student;
 
 class LoginController extends Controller
 {
@@ -57,17 +58,23 @@ class LoginController extends Controller
         ]);
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-            
+
             $user = auth()->user();
-        
-            // Retrieve the user's full details from the T_features table
-            $userDetails = DB::table('t_features')
+
+            if ($user->type == 'administration') {
+                // Retrieve the user's full details from the T_features table
+                $userDetails = DB::table('t_features')
+                    ->where('user_id', $user->user_id)
+                    ->first();
+            } else if ($user->type == 'student_portal') {
+                $userDetails = DB::table('students')
                 ->where('user_id', $user->user_id)
                 ->first();
-        
+            }
+
             // Store the user's full details in the session
-            $request->session()->put('user', array_merge($user->toArray(), (array)$userDetails));
-        
+            $request->session()->put('user', array_merge($user->toArray(), (array) $userDetails));
+
 
             // Redirect to the appropriate route
             if ($user->type == 'administration') {

@@ -25,6 +25,13 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/session', function () {
+
+    $session = session()->all();
+    p($session);
+
+});
+
 
 Route::get('/', function () {
 
@@ -192,6 +199,8 @@ Route::middleware(['auth', 'user-access:administration'])->group(function () {
         Route::get('/deposit_print/{id}', [DepositController::class, 'DepositPrint'])->name('administration_deposit.print');
 
         Route::get('/deposit_quarry', [DepositController::class, 'DepositQuarry'])->name('administration_deposit.quarry');
+
+        Route::get('/deposit_check', [DepositController::class, 'DepositCheck'])->name('administration_deposit.check');
         // 
 
 
@@ -225,6 +234,16 @@ Route::middleware(['auth', 'user-access:student_portal'])->group(function () {
         Route::get('/welcome', [StudentPortalController::class, 'HomePage'])->name('student_portal.welcome');
 
         Route::get('/profile', [StudentPortalController::class, 'profile'])->name('student_portal.profile');
+
+        Route::get('/notice', [StudentPortalController::class, 'notice'])->name('student_portal.notice');
+
+        Route::get('/notice/{id}', [StudentPortalController::class, 'noticeFull'])->name('student_portal.notice.full');
+       
+        Route::get('/result', [StudentPortalController::class, 'result'])->name('student_portal.result');
+        
+        Route::get('/fees_deposit', [StudentPortalController::class, 'fees_deposit'])->name('student_portal.fees_deposit');
+        
+        Route::get('/course', [StudentPortalController::class, 'course'])->name('student_portal.course');
 
 
 

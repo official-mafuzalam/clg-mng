@@ -154,6 +154,22 @@ class DepositController extends Controller
 
     }
 
+    public function DepositCheck(Request $request)
+    {
+
+        
+        $search_user_id = isset($request['id']) ? $request['id'] : "";
+
+
+        $deposits = Deposits::where('user_id', $search_user_id)
+                ->paginate(20);
+
+        $data = compact('deposits');
+
+        return view('administration.deposit_check')->with($data);
+
+    }
+
 
 
 

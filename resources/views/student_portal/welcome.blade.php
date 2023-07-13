@@ -23,14 +23,6 @@
 <!-- End Breadcrumb -->
 
 @section('main-content')
-    <div class="w-full h-fit pt-2 bg-green-400 dark:bg-amber-400 rounded-lg text-slate-900 dark:text-gray-950">
-
-        <marquee class="text-sm mx-4" behavior="scroll" direction="left" onmouseover="this.stop();"
-            onmouseout="this.start();">
-            {{ $latest_notice->title }}
-        </marquee>
-
-    </div>
     <!-- Page Heading -->
     <header>
 
@@ -41,6 +33,17 @@
 
     </header>
     <!-- End Page Heading -->
+
+    <div class="w-full h-fit pt-2 mt-2 bg-green-400 dark:bg-amber-400 rounded-lg text-slate-900 dark:text-gray-950">
+
+        <marquee class="text-sm mx-4" behavior="scroll" direction="left" onmouseover="this.stop();"
+            onmouseout="this.start();">
+            <a href="{{ route('student_portal.notice') }}">
+                {{ $latest_notice->title }}
+            </a>
+        </marquee>
+
+    </div>
 
 
     <div class="w-full h-fit p-4 mt-4 bg-green-400 dark:bg-violet-900 rounded-lg text-lg text-slate-900 dark:text-gray-950">
@@ -66,7 +69,7 @@
                     </svg>
                 </a>
             </div>
-            
+
             <div class="rounded-md bg-slate-500 dark:bg-slate-900 p-2 text-center">
                 <p class="sm:font-bold sm:text-lg text-sm overflow-hidden text-gray-50 dark:text-gray-200 text-center">
                     Event
